@@ -99,6 +99,10 @@
                                         </th>
                                         <th
                                             class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                            สี
+                                        </th>
+                                        <th
+                                            class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                             จัดการข้อมูล
                                         </th>
                                     </tr>
@@ -124,6 +128,10 @@
                                             <td class="text-center">
                                                 <span
                                                     class="text-secondary text-xs font-weight-bold">{{ $type->year }}</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span
+                                                    class="text-secondary text-xs font-weight-bold">{{ $type->color }}</span>
                                             </td>
                                             <td class="text-center">
                                                 <a href="#" class="btn bg-gradient-warning" data-bs-toggle="modal"

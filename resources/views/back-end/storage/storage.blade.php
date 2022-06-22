@@ -59,29 +59,29 @@
         <!-- end model -->
         <div class="card-body px-0 pt-0 pb-2">
           <div class="table-responsive p-0">
-            <table class="table align-items-center mb-0">
+            <table id="myTable" class="table align-items-center mb-0">
               <thead>
                 <tr>
                   <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7">
                     #
                   </th>
                   <th class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">
-                    สถานะรถ
+                    รูปภาพ
                   </th>
                   <th class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">
-                    ข้อมูล
+                    ยี้ห้อ
                   </th>
                   <th class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">
-                    ท้าย
+                    รุ่น
                   </th>
                   <th class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">
-                    ซิว
+                    ปี
                   </th>
                   <th class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">
-                    รูปภาพขวา/ซ้าย
+                    สี
                   </th>
                   <th class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">
-                    สำเนา
+                    ราคา
                   </th>
                   <th class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">
                     สถานะการขาย
@@ -92,21 +92,10 @@
                 </tr>
               </thead>
               <tbody>
+                @foreach ($storages as $storage)
                 <tr>
                   <td class="ps-4">
-                    <p class="text-xs font-weight-bold mb-0">1</p>
-                  </td>
-                  <td class="text-center">
-                    <p class="text-xs font-weight-bold mb-0 badge rounded-pill bg-success">พร้อมขาย</p>
-                  </td>
-                  <td class="text-center">
-                    <span class="text-secondary text-xs font-weight-bold">รถใหม่</span>
-                  </td>
-                  <td class="text-center">
-                    <span class="text-secondary text-xs font-weight-bold">เดิม</span>
-                  </td>
-                  <td class="text-center">
-                    <span class="text-secondary text-xs font-weight-bold">แต่ง</span>
+                    <p class="text-xs font-weight-bold mb-0">{{$storage->id}}</p>
                   </td>
                   <td class="text-center">
                     <div>
@@ -114,10 +103,22 @@
                     </div>
                   </td>
                   <td class="text-center">
-                    <span class="text-secondary text-xs font-weight-bold">file</span>
+                    <p class="text-xs font-weight-bold mb-0 badge rounded-pill bg-success">{{$storage->id_type}}</p>
                   </td>
                   <td class="text-center">
-                    <span class="text-white text-xs font-weight-bold badge rounded-pill bg-danger">ติดจอง</span>
+                    <span class="text-secondary text-xs font-weight-bold">{{$storage->id_type}}</span>
+                  </td>
+                  <td class="text-center">
+                    <span class="text-secondary text-xs font-weight-bold">{{$storage->id_type}}</span>
+                  </td>
+                  <td class="text-center">
+                    <span class="text-secondary text-xs font-weight-bold">{{$storage->id_type}}</span>
+                  </td>
+                  <td class="text-center">
+                    <span class="text-secondary text-xs font-weight-bold">{{$storage->price}}</span>
+                  </td>
+                  <td class="text-center">
+                    <span class="text-xs font-weight-bold mb-0 badge rounded-pill bg-success">{{$storage->status}}</span>
                   </td>
                   <td class="text-center">
                     <a href="#" class="btn bg-gradient-warning btn-sm" data-bs-toggle="modal" data-bs-target="#updatedata">
@@ -128,6 +129,7 @@
                     </a>
                   </td>
                 </tr>
+                @endforeach
               </tbody>
             </table>
           </div>
@@ -138,3 +140,10 @@
 </div>
 
 @endsection
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function() {
+        $('#myTable').DataTable();
+    });
+</script>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\StorageModel;
 
 class storageController extends Controller
 {
@@ -13,6 +14,7 @@ class storageController extends Controller
     protected $folder = 'storage';
     protected $name_page = "รายการสต๊อกสินค้า";
 
+
     public function storage(Request $request)
     {
         return view("$this->prefix.$this->folder.storage", [
@@ -20,6 +22,7 @@ class storageController extends Controller
             'folder' => $this->folder,
             'segment' => $this->segment,
             'name_page' => $this->name_page,
+            'storages' => StorageModel::all(),
         ]);
     }
 }
