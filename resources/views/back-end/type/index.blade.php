@@ -59,7 +59,7 @@
         <!-- end model -->
         <div class="card-body px-0 pt-0 pb-2">
           <div class="table-responsive p-0">
-            <table class="table align-items-center mb-0">
+            <table id="myTable" class="table align-items-center mb-0">
               <thead>
                 <tr>
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
@@ -80,9 +80,10 @@
                 </tr>
               </thead>
               <tbody>
+                @foreach ($types as $type)
                 <tr>
                   <td class="ps-4">
-                    <p class="text-xs font-weight-bold mb-0">1</p>
+                    <p class="text-xs font-weight-bold mb-0">{{$type->id}}</p>
                   </td>
                   <!-- <td>
                     <div>
@@ -90,10 +91,10 @@
                     </div>
                   </td> -->
                   <td class="text-center">
-                    <p class="text-xs font-weight-bold mb-0">Honda</p>
+                    <p class="text-xs font-weight-bold mb-0">{{$type->type}}</p>
                   </td>
                   <td class="text-center">
-                    <span class="text-secondary text-xs font-weight-bold">CBR 80000</span>
+                    <span class="text-secondary text-xs font-weight-bold">{{$type->model}}</span>
                   </td>
                   <td class="text-center">
                     <a href="#" class="btn bg-gradient-warning btn-sm" data-bs-toggle="modal" data-bs-target="#updatedata">
@@ -104,6 +105,7 @@
                     </a>
                   </td>
                 </tr>
+                @endforeach
               </tbody>
             </table>
           </div>
@@ -112,5 +114,9 @@
     </div>
   </div>
 </div>
-
+<script>
+    $(document).ready( function () {
+    $('#myTable').DataTable();
+} );
+</script>
 @endsection

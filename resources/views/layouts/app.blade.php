@@ -48,6 +48,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai&display=swap" rel="stylesheet">
+
+  <!-- DATA TABLE -->
+  <link rel="stylesheet" href="//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+
   <style>
     body {
       font-family: 'IBM Plex Sans Thai', sans-serif;
@@ -91,6 +95,8 @@
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="../assets/js/soft-ui-dashboard.min.js?v=1.0.3"></script>
+  {{-- DATA TABLE --}}
+  <script src="//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
 </body>
 
 </html>
