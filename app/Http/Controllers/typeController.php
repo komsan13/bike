@@ -11,7 +11,7 @@ class typeController extends Controller
     protected $segment = 'webpanel';
     protected $controller = 'type';
     protected $folder = 'type';
-    protected $name_page = "รายการ";
+    protected $name_page = "รายการประเภทรถ";
 
     public function index(Request $request)
     {

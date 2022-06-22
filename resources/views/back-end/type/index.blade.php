@@ -9,7 +9,7 @@
         <div class="card-header pb-0">
           <div class="d-flex flex-row justify-content-between">
             <div>
-              <h5 class="mb-0">{{$name_page}}</h5>
+              <h5 class="mb-0"><i class="fas fa-align-left"></i> {{$name_page}}</h5>
             </div>
             <a href="#" class="btn bg-gradient-success btn-sm mb-0" type="button" data-bs-toggle="modal" data-bs-target="#insertdata">+&nbsp; เพิ่มข้อมูล</a>
           </div>
@@ -19,6 +19,7 @@
           <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
               <div class="modal-body">
+                <b><i class="fas fa-solid fa-plus text-success"></i> เพิ่มข้อมูล {{$name_page}}</b> <br>
                 <!-- <h5 class="modal-title font-weight-normal" id="insertdataLabel">เพิ่มข้อมูล</h5> -->
                 <label for="type">รูปภาพ</label>
                 <input type="file" class="form-control">
@@ -28,8 +29,31 @@
                 <input type="text" class="form-control">
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn bg-gradient-secondary" data-bs-dismiss="modal">ปิด</button>
-                <button type="button" class="btn bg-gradient-success">บันทึกข้อมูล</button>
+                <button type="button" class="btn bg-gradient-secondary" data-bs-dismiss="modal"><i class="fas fa-window-close"></i> &nbsp;&nbsp;ปิดแท็ป</button>
+                <button type="button" class="btn bg-gradient-success"><i class="fas fa-save"></i> &nbsp;&nbsp;บันทึกข้อมูล</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end model -->
+        <!-- Modal -->
+        <div class="modal fade" id="updatedata" tabindex="-1" role="dialog" aria-labelledby="updatedataLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-body">
+                <b><i class="fas fa-edit text-warning"></i> แก้ไขข้อมูล {{$name_page}}</b> <br>
+                <!-- <h5 class="modal-title font-weight-normal" id="updatedataLabel">เพิ่มข้อมูล</h5> -->
+                <label for="type">รูปภาพ</label>
+                <input type="file" class="form-control">
+                <label for="type">ประเภทรถ</label>
+                <input type="text" class="form-control">
+                <label for="type">รุ่น</label>
+                <input type="text" class="form-control">
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn bg-gradient-secondary" data-bs-dismiss="modal"><i class="fas fa-window-close"></i> &nbsp;&nbsp;ปิดแท็ป</button>
+                <button type="button" class="btn bg-gradient-success"><i class="fas fa-save"></i> &nbsp;&nbsp;อัพเดท
+                ข้อมูล</button>
               </div>
             </div>
           </div>
@@ -74,11 +98,11 @@
                     <span class="text-secondary text-xs font-weight-bold">CBR 80000</span>
                   </td>
                   <td class="text-center">
-                    <a href="#" class="btn bg-gradient-warning btn-sm" data-bs-toggle="modal" data-bs-target="#insertdata">
-                      <i class="fa-lg fas fa-user-edit text-white"></i>
+                    <a href="#" class="btn bg-gradient-warning btn-sm" data-bs-toggle="modal" data-bs-target="#updatedata">
+                      <i class="fa-lg fas fa-edit text-white" style="font-size: 10px;"></i>
                     </a>
                     <a href="#" class="btn bg-gradient-danger btn-sm" data-bs-toggle="tooltip" data-bs-original-title="ลบข้อมูล">
-                      <i class="fa-lg cursor-pointer fas fa-trash text-white"></i>
+                      <i class="fa-lg cursor-pointer fas fa-trash text-white" style="font-size: 10px;"></i>
                     </a>
                   </td>
                 </tr>
@@ -98,11 +122,11 @@
                     <span class="text-secondary text-xs font-weight-bold">CBR 80000</span>
                   </td>
                   <td class="text-center">
-                    <a href="#" class="btn bg-gradient-warning btn-sm" data-bs-toggle="modal" data-bs-target="#insertdata">
-                      <i class="fa-lg fas fa-user-edit text-white"></i>
+                    <a href="#" class="btn bg-gradient-warning btn-sm" data-bs-toggle="modal" data-bs-target="#updatedata">
+                      <i class="fa-lg fas fa-edit text-white" style="font-size: 10px;"></i>
                     </a>
                     <a href="#" class="btn bg-gradient-danger btn-sm" data-bs-toggle="tooltip" data-bs-original-title="ลบข้อมูล">
-                      <i class="fa-lg cursor-pointer fas fa-trash text-white"></i>
+                      <i class="fa-lg cursor-pointer fas fa-trash text-white" style="font-size: 10px;"></i>
                     </a>
                   </td>
                 </tr>
@@ -122,11 +146,11 @@
                     <span class="text-secondary text-xs font-weight-bold">CBR 80000</span>
                   </td>
                   <td class="text-center">
-                    <a href="#" class="btn bg-gradient-warning btn-sm" data-bs-toggle="modal" data-bs-target="#insertdata">
-                      <i class="fa-lg fas fa-user-edit text-white"></i>
+                    <a href="#" class="btn bg-gradient-warning btn-sm" data-bs-toggle="modal" data-bs-target="#updatedata">
+                      <i class="fa-lg fas fa-edit text-white" style="font-size: 10px;"></i>
                     </a>
                     <a href="#" class="btn bg-gradient-danger btn-sm" data-bs-toggle="tooltip" data-bs-original-title="ลบข้อมูล">
-                      <i class="fa-lg cursor-pointer fas fa-trash text-white"></i>
+                      <i class="fa-lg cursor-pointer fas fa-trash text-white" style="font-size: 10px;"></i>
                     </a>
                   </td>
                 </tr>
