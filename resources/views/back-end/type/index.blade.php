@@ -20,9 +20,8 @@
             <div class="modal-content">
               <div class="modal-body">
                 <b><i class="fas fa-solid fa-plus text-success"></i> เพิ่มข้อมูล {{$name_page}}</b> <br>
-                <!-- <h5 class="modal-title font-weight-normal" id="insertdataLabel">เพิ่มข้อมูล</h5> -->
-                <label for="type">รูปภาพ</label>
-                <input type="file" class="form-control">
+                <!-- <label for="type">รูปภาพ</label>
+                <input type="file" class="form-control"> -->
                 <label for="type">ประเภทรถ</label>
                 <input type="text" class="form-control">
                 <label for="type">รุ่น</label>
@@ -42,9 +41,8 @@
             <div class="modal-content">
               <div class="modal-body">
                 <b><i class="fas fa-edit text-warning"></i> แก้ไขข้อมูล {{$name_page}}</b> <br>
-                <!-- <h5 class="modal-title font-weight-normal" id="updatedataLabel">เพิ่มข้อมูล</h5> -->
-                <label for="type">รูปภาพ</label>
-                <input type="file" class="form-control">
+                <!-- <label for="type">รูปภาพ</label>
+                <input type="file" class="form-control"> -->
                 <label for="type">ประเภทรถ</label>
                 <input type="text" class="form-control">
                 <label for="type">รุ่น</label>
@@ -53,7 +51,7 @@
               <div class="modal-footer">
                 <button type="button" class="btn bg-gradient-secondary" data-bs-dismiss="modal"><i class="fas fa-window-close"></i> &nbsp;&nbsp;ปิดแท็ป</button>
                 <button type="button" class="btn bg-gradient-success"><i class="fas fa-save"></i> &nbsp;&nbsp;อัพเดท
-                ข้อมูล</button>
+                  ข้อมูล</button>
               </div>
             </div>
           </div>
@@ -67,9 +65,9 @@
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                     #
                   </th>
-                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                  <!-- <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                     รูปภาพ
-                  </th>
+                  </th> -->
                   <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                     ประเภทรถ
                   </th>
@@ -86,59 +84,11 @@
                   <td class="ps-4">
                     <p class="text-xs font-weight-bold mb-0">1</p>
                   </td>
-                  <td>
+                  <!-- <td>
                     <div>
                       <img src="https://www.greatbiker.com/wp-content/uploads/2020/10/cbr650r.jpg" width="80px">
                     </div>
-                  </td>
-                  <td class="text-center">
-                    <p class="text-xs font-weight-bold mb-0">Honda</p>
-                  </td>
-                  <td class="text-center">
-                    <span class="text-secondary text-xs font-weight-bold">CBR 80000</span>
-                  </td>
-                  <td class="text-center">
-                    <a href="#" class="btn bg-gradient-warning btn-sm" data-bs-toggle="modal" data-bs-target="#updatedata">
-                      <i class="fa-lg fas fa-edit text-white" style="font-size: 10px;"></i>
-                    </a>
-                    <a href="#" class="btn bg-gradient-danger btn-sm" data-bs-toggle="tooltip" data-bs-original-title="ลบข้อมูล">
-                      <i class="fa-lg cursor-pointer fas fa-trash text-white" style="font-size: 10px;"></i>
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="ps-4">
-                    <p class="text-xs font-weight-bold mb-0">1</p>
-                  </td>
-                  <td>
-                    <div>
-                      <img src="https://www.greatbiker.com/wp-content/uploads/2020/10/cbr650r.jpg" width="80px">
-                    </div>
-                  </td>
-                  <td class="text-center">
-                    <p class="text-xs font-weight-bold mb-0">Honda</p>
-                  </td>
-                  <td class="text-center">
-                    <span class="text-secondary text-xs font-weight-bold">CBR 80000</span>
-                  </td>
-                  <td class="text-center">
-                    <a href="#" class="btn bg-gradient-warning btn-sm" data-bs-toggle="modal" data-bs-target="#updatedata">
-                      <i class="fa-lg fas fa-edit text-white" style="font-size: 10px;"></i>
-                    </a>
-                    <a href="#" class="btn bg-gradient-danger btn-sm" data-bs-toggle="tooltip" data-bs-original-title="ลบข้อมูล">
-                      <i class="fa-lg cursor-pointer fas fa-trash text-white" style="font-size: 10px;"></i>
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="ps-4">
-                    <p class="text-xs font-weight-bold mb-0">1</p>
-                  </td>
-                  <td>
-                    <div>
-                      <img src="https://www.greatbiker.com/wp-content/uploads/2020/10/cbr650r.jpg" width="80px">
-                    </div>
-                  </td>
+                  </td> -->
                   <td class="text-center">
                     <p class="text-xs font-weight-bold mb-0">Honda</p>
                   </td>
