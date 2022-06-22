@@ -6,10 +6,10 @@ use App\Http\Controllers\InfoUserController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ResetController;
 use App\Http\Controllers\SessionsController;
-// 
+//
 use App\Http\Controllers\typeController;
 use App\Http\Controllers\storageController;
-// 
+//
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Facades\Route;
@@ -73,11 +73,11 @@ Route::group(['middleware' => 'auth'], function () {
 	})->name('sign-up');
 
 	Route::prefix('type')->group(function () {
-		Route::get('/', [typeController::class, 'index']);
+		Route::get('/', [typeController::class, 'type']);
 	});
 
 	Route::prefix('storage')->group(function () {
-		Route::get('/', [storageController::class, 'index']);
+		Route::get('/', [storageController::class, 'storage']);
 	});
 });
 

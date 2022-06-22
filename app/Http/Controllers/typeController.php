@@ -13,9 +13,9 @@ class typeController extends Controller
     protected $folder = 'type';
     protected $name_page = "รายการประเภทรถ";
 
-    public function index(Request $request)
+    public function type(Request $request)
     {
-        return view("$this->prefix.$this->folder.index", [
+        return view("$this->prefix.$this->folder.type", [
             'prefix' => $this->prefix,
             'folder' => $this->folder,
             'segment' => $this->segment,

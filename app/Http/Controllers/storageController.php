@@ -13,9 +13,9 @@ class storageController extends Controller
     protected $folder = 'storage';
     protected $name_page = "รายการสต๊อกสินค้า";
 
-    public function index(Request $request)
+    public function storage(Request $request)
     {
-        return view("$this->prefix.$this->folder.index", [
+        return view("$this->prefix.$this->folder.storage", [
             'prefix' => $this->prefix,
             'folder' => $this->folder,
             'segment' => $this->segment,
