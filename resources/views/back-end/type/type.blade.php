@@ -57,7 +57,7 @@
           </div>
         </div>
         <!-- end model -->
-        <div class="card-body px-0 pt-0 pb-2">
+        <div class="card-body">
           <div class="table-responsive p-0">
             <table id="myTable" class="table align-items-center mb-0">
               <thead>
@@ -115,8 +115,9 @@
   </div>
 </div>
 @endsection
-{{-- <script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script>
     $(document).ready( function () {
     $('#myTable').DataTable();
 } );
-</script> --}}
+</script>

@@ -103,7 +103,8 @@
     <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
     <script src="../assets/js/soft-ui-dashboard.min.js?v=1.0.3"></script>
     {{-- DATA TABLE --}}
-    {{-- <script src="//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script> --}}
+    <script src="//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+
 </body>
 
 </html>
