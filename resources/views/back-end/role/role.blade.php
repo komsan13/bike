@@ -25,24 +25,15 @@
                                 </div>
                                 <div class="modal-body">
                                     <div class="mb-3">
-                                        <label for="" class="form-label">ยี่ห้อรถ</label>
-                                        <input type="text" class="form-control" id="">
+                                        <label for="" class="form-label">ชื่อหน้าที่</label>
+                                        <input type="text" class="form-control" id="" placeholder="admin">
                                     </div>
-                                    <div class="mb-3">
-                                        <label for="" class="form-label">รุ่นรถ</label>
-                                        <input type="text" class="form-control" id="">
-                                    </div>
-                                    <div class="mb-3">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label for="" class="form-label">ปีรถ</label>
-                                                <input type="text" maxlength="4" class="form-control" id="">
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label for="" class="form-label">สีรถ</label>
-                                                <input type="text" class="form-control" id="">
-                                            </div>
-                                        </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"
+                                            checked>
+                                        <label class="form-check-label" for="flexCheckChecked">
+                                            สถานะการใช้งาน
+                                        </label>
                                     </div>
                                 </div>
                                 <div class="modal-footer">
@@ -66,22 +57,97 @@
                                 </div>
                                 <div class="modal-body">
                                     <div class="mb-3">
-                                        <label for="" class="form-label">ยี่ห้อรถ</label>
-                                        <input type="text" class="form-control" id="">
+                                        <label for="" class="form-label">ชื่อหน้าที่</label>
+                                        <input type="text" class="form-control" id="" placeholder="admin">
                                     </div>
-                                    <div class="mb-3">
-                                        <label for="" class="form-label">รุ่นรถ</label>
-                                        <input type="text" class="form-control" id="">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"
+                                            checked>
+                                        <label class="form-check-label" for="flexCheckChecked">
+                                            สถานะการใช้งาน
+                                        </label>
                                     </div>
-                                    <div class="mb-3">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label for="" class="form-label">ปีรถ</label>
-                                                <input type="number" maxlength="4" class="form-control" id="">
+
+                                    <div class="card" style="border-radius: 20px;">
+                                        <div class="card-body">
+                                            <p><i class="fas fa-cogs"></i> จัดการการสิทธิ์เมนู</p>
+                                            <small>เมนูสต๊อกสินค้า</small>
+                                            <div class="row">
+                                                <div class="col-md-2">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value=""
+                                                            id="flexCheckDefault">
+                                                        <label class="form-check-label" for="flexCheckDefault">
+                                                            อ่าน
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value=""
+                                                            id="flexCheckDefault">
+                                                        <label class="form-check-label" for="flexCheckDefault">
+                                                            เพิ่ม
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value=""
+                                                            id="flexCheckDefault">
+                                                        <label class="form-check-label" for="flexCheckDefault">
+                                                            แก้ไข
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value=""
+                                                            id="flexCheckDefault">
+                                                        <label class="form-check-label" for="flexCheckDefault">
+                                                            ลบ
+                                                        </label>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="col-md-6">
-                                                <label for="" class="form-label">สีรถ</label>
-                                                <input type="text" class="form-control" id="">
+                                            <small class="mt-3">ข้อมูลลูกค้า</small>
+                                            <div class="row">
+                                                <div class="col-md-2">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value=""
+                                                            id="flexCheckDefault">
+                                                        <label class="form-check-label" for="flexCheckDefault">
+                                                            อ่าน
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value=""
+                                                            id="flexCheckDefault">
+                                                        <label class="form-check-label" for="flexCheckDefault">
+                                                            เพิ่ม
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value=""
+                                                            id="flexCheckDefault">
+                                                        <label class="form-check-label" for="flexCheckDefault">
+                                                            แก้ไข
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value=""
+                                                            id="flexCheckDefault">
+                                                        <label class="form-check-label" for="flexCheckDefault">
+                                                            ลบ
+                                                        </label>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -107,19 +173,15 @@
                                         </th>
                                         <th
                                             class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">
-                                            ยี่ห้อรถ
+                                            ชื่อเมนู
                                         </th>
                                         <th
                                             class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">
-                                            รุ่นรถ
+                                            วันที่สร้าง
                                         </th>
                                         <th
                                             class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">
-                                            ปีรถ
-                                        </th>
-                                        <th
-                                            class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">
-                                            สีรถ
+                                            สถานะ
                                         </th>
                                         <th
                                             class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">
@@ -133,19 +195,15 @@
                                             <p class="text-secondary text-xs font-weight-normal">1</p>
                                         </td>
                                         <td class="text-center">
-                                            <p class="text-secondary text-xs font-weight-normal">Honda</p>
+                                            <p class="text-secondary text-xs font-weight-normal">ผู้ดูแลระบบ</p>
                                         </td>
                                         <td class="text-center">
-                                            <span
-                                                class="text-secondary text-xs font-weight-normal">CB1000R</span>
+                                            <span class="text-secondary text-xs font-weight-normal">6/23/2022</span>
                                         </td>
                                         <td class="text-center">
-                                            <span
-                                                class="text-secondary text-xs font-weight-normal">2022</span>
-                                        </td>
-                                        <td class="text-center">
-                                            <span
-                                                class="text-secondary text-xs font-weight-normal">สีดำ</span>
+                                            <span class="text-secondary text-xs font-weight-normal">
+                                                <small class="badge rounded-pill bg-success">เปิดการใช้งาน</small>
+                                            </span>
                                         </td>
                                         <td class="text-center">
                                             <a href="#" class="btn bg-gradient-warning" data-bs-toggle="modal"
@@ -159,70 +217,6 @@
                                             </a>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td>
-                                            <p class="text-secondary text-xs font-weight-normal">2</p>
-                                        </td>
-                                        <td class="text-center">
-                                            <p class="text-secondary text-xs font-weight-normal">Honda</p>
-                                        </td>
-                                        <td class="text-center">
-                                            <span
-                                                class="text-secondary text-xs font-weight-normal">CB300R</span>
-                                        </td>
-                                        <td class="text-center">
-                                            <span
-                                                class="text-secondary text-xs font-weight-normal">2022</span>
-                                        </td>
-                                        <td class="text-center">
-                                            <span
-                                                class="text-secondary text-xs font-weight-normal">สีดำแดง</span>
-                                        </td>
-                                        <td class="text-center">
-                                            <a href="#" class="btn bg-gradient-warning" data-bs-toggle="modal"
-                                                data-bs-target="#updatedata">
-                                                <i class="fa-lg fas fa-edit text-white" style="font-size: 10px;"></i>
-                                            </a>
-                                            <a href="#" class="btn bg-gradient-danger" data-bs-toggle="tooltip"
-                                                data-bs-original-title="ลบข้อมูล">
-                                                <i class="fa-lg cursor-pointer fas fa-trash text-white"
-                                                    style="font-size: 10px;"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    {{-- @foreach ($types as $type)
-                                        <tr>
-                                            <td class="ps-4">
-                                                <p class="text-xs font-weight-bold mb-0">{{ $type->id }}</p>
-                                            </td>
-                                            <td class="text-center">
-                                                <p class="text-xs font-weight-bold mb-0">{{ $type->type }}</p>
-                                            </td>
-                                            <td class="text-center">
-                                                <span
-                                                    class="text-secondary text-xs font-weight-bold">{{ $type->model }}</span>
-                                            </td>
-                                            <td class="text-center">
-                                                <span
-                                                    class="text-secondary text-xs font-weight-bold">{{ $type->year }}</span>
-                                            </td>
-                                            <td class="text-center">
-                                                <span
-                                                    class="text-secondary text-xs font-weight-bold">{{ $type->color }}</span>
-                                            </td>
-                                            <td class="text-center">
-                                                <a href="#" class="btn bg-gradient-warning" data-bs-toggle="modal"
-                                                    data-bs-target="#updatedata">
-                                                    <i class="fa-lg fas fa-edit text-white" style="font-size: 10px;"></i>
-                                                </a>
-                                                <a href="#" class="btn bg-gradient-danger" data-bs-toggle="tooltip"
-                                                    data-bs-original-title="ลบข้อมูล">
-                                                    <i class="fa-lg cursor-pointer fas fa-trash text-white"
-                                                        style="font-size: 10px;"></i>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                    @endforeach --}}
                                 </tbody>
                             </table>
                         </div>

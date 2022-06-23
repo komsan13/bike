@@ -25,21 +25,41 @@
                                 </div>
                                 <div class="modal-body">
                                     <div class="mb-3">
-                                        <label for="" class="form-label">ยี่ห้อรถ</label>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label for="" class="form-label">ระดับผู้ใช้</label>
+                                                <select class="form-select" aria-label="Default select example">
+                                                    <option selected>--</option>
+                                                    <option value="1">ผู้ดูแลระบบ</option>
+                                                    <option value="2">ผู้จัดการ</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="" class="form-label">สถานะ</label>
+                                                <select class="form-select" aria-label="Default select example">
+                                                    <option selected>--</option>
+                                                    <option value="1">ปิดการใช้งาน</option>
+                                                    <option value="2">เปิดการใช้งาน</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="" class="form-label">ชื่อ</label>
                                         <input type="text" class="form-control" id="">
                                     </div>
                                     <div class="mb-3">
-                                        <label for="" class="form-label">รุ่นรถ</label>
+                                        <label for="" class="form-label">ชื่อผู้ใช้</label>
                                         <input type="text" class="form-control" id="">
                                     </div>
                                     <div class="mb-3">
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label for="" class="form-label">ปีรถ</label>
+                                                <label for="" class="form-label">รหัสผ่าน</label>
                                                 <input type="text" maxlength="4" class="form-control" id="">
                                             </div>
                                             <div class="col-md-6">
-                                                <label for="" class="form-label">สีรถ</label>
+                                                <label for="" class="form-label">ยืนยีนรหัสผ่าน</label>
                                                 <input type="text" class="form-control" id="">
                                             </div>
                                         </div>
@@ -66,21 +86,42 @@
                                 </div>
                                 <div class="modal-body">
                                     <div class="mb-3">
-                                        <label for="" class="form-label">ยี่ห้อรถ</label>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label for="" class="form-label">ระดับผู้ใช้</label>
+                                                <select class="form-select" aria-label="Default select example">
+                                                    <option selected>--</option>
+                                                    <option value="1">ผู้ดูแลระบบ</option>
+                                                    <option value="2">ผู้จัดการ</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="" class="form-label">สถานะ</label>
+                                                <select class="form-select" aria-label="Default select example">
+                                                    <option selected>--</option>
+                                                    <option value="1">ปิดการใช้งาน</option>
+                                                    <option value="2">เปิดการใช้งาน</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="" class="form-label">ชื่อ</label>
                                         <input type="text" class="form-control" id="">
                                     </div>
                                     <div class="mb-3">
-                                        <label for="" class="form-label">รุ่นรถ</label>
+                                        <label for="" class="form-label">ชื่อผู้ใช้</label>
                                         <input type="text" class="form-control" id="">
                                     </div>
                                     <div class="mb-3">
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label for="" class="form-label">ปีรถ</label>
-                                                <input type="number" maxlength="4" class="form-control" id="">
+                                                <label for="" class="form-label">รหัสผ่าน</label>
+                                                <input type="text" maxlength="4" class="form-control"
+                                                    id="">
                                             </div>
                                             <div class="col-md-6">
-                                                <label for="" class="form-label">สีรถ</label>
+                                                <label for="" class="form-label">ยืนยีนรหัสผ่าน</label>
                                                 <input type="text" class="form-control" id="">
                                             </div>
                                         </div>
@@ -107,23 +148,27 @@
                                         </th>
                                         <th
                                             class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">
-                                            ยี่ห้อรถ
+                                            ชื่อ
                                         </th>
                                         <th
                                             class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">
-                                            รุ่นรถ
+                                            ชื่อผู้ใช้
                                         </th>
                                         <th
                                             class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">
-                                            ปีรถ
+                                            บทบาทหน้า
                                         </th>
                                         <th
                                             class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">
-                                            สีรถ
+                                            วันที่สร้าง
                                         </th>
                                         <th
                                             class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">
-                                            จัดการข้อมูล
+                                            สถานะ
+                                        </th>
+                                        <th
+                                            class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">
+                                            จัดการ
                                         </th>
                                     </tr>
                                 </thead>
@@ -133,50 +178,21 @@
                                             <p class="text-secondary text-xs font-weight-normal">1</p>
                                         </td>
                                         <td class="text-center">
-                                            <p class="text-secondary text-xs font-weight-normal">Honda</p>
+                                            <p class="text-secondary text-xs font-weight-normal">komsan</p>
                                         </td>
                                         <td class="text-center">
-                                            <span
-                                                class="text-secondary text-xs font-weight-normal">CB1000R</span>
+                                            <span class="text-secondary text-xs font-weight-normal">admin@gmail.com</span>
                                         </td>
                                         <td class="text-center">
-                                            <span
-                                                class="text-secondary text-xs font-weight-normal">2022</span>
+                                            <span class="text-secondary text-xs font-weight-normal">ผู้ดูแลระบบ</span>
                                         </td>
                                         <td class="text-center">
-                                            <span
-                                                class="text-secondary text-xs font-weight-normal">สีดำ</span>
+                                            <span class="text-secondary text-xs font-weight-normal">6/23/2022</span>
                                         </td>
                                         <td class="text-center">
-                                            <a href="#" class="btn bg-gradient-warning" data-bs-toggle="modal"
-                                                data-bs-target="#updatedata">
-                                                <i class="fa-lg fas fa-edit text-white" style="font-size: 10px;"></i>
-                                            </a>
-                                            <a href="#" class="btn bg-gradient-danger" data-bs-toggle="tooltip"
-                                                data-bs-original-title="ลบข้อมูล">
-                                                <i class="fa-lg cursor-pointer fas fa-trash text-white"
-                                                    style="font-size: 10px;"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <p class="text-secondary text-xs font-weight-normal">2</p>
-                                        </td>
-                                        <td class="text-center">
-                                            <p class="text-secondary text-xs font-weight-normal">Honda</p>
-                                        </td>
-                                        <td class="text-center">
-                                            <span
-                                                class="text-secondary text-xs font-weight-normal">CB300R</span>
-                                        </td>
-                                        <td class="text-center">
-                                            <span
-                                                class="text-secondary text-xs font-weight-normal">2022</span>
-                                        </td>
-                                        <td class="text-center">
-                                            <span
-                                                class="text-secondary text-xs font-weight-normal">สีดำแดง</span>
+                                            <span class="text-secondary text-xs font-weight-normal">
+                                                <small class="badge rounded-pill bg-success">เปิดการใช้งาน</small>
+                                            </span>
                                         </td>
                                         <td class="text-center">
                                             <a href="#" class="btn bg-gradient-warning" data-bs-toggle="modal"
@@ -190,39 +206,6 @@
                                             </a>
                                         </td>
                                     </tr>
-                                    {{-- @foreach ($types as $type)
-                                        <tr>
-                                            <td class="ps-4">
-                                                <p class="text-xs font-weight-bold mb-0">{{ $type->id }}</p>
-                                            </td>
-                                            <td class="text-center">
-                                                <p class="text-xs font-weight-bold mb-0">{{ $type->type }}</p>
-                                            </td>
-                                            <td class="text-center">
-                                                <span
-                                                    class="text-secondary text-xs font-weight-bold">{{ $type->model }}</span>
-                                            </td>
-                                            <td class="text-center">
-                                                <span
-                                                    class="text-secondary text-xs font-weight-bold">{{ $type->year }}</span>
-                                            </td>
-                                            <td class="text-center">
-                                                <span
-                                                    class="text-secondary text-xs font-weight-bold">{{ $type->color }}</span>
-                                            </td>
-                                            <td class="text-center">
-                                                <a href="#" class="btn bg-gradient-warning" data-bs-toggle="modal"
-                                                    data-bs-target="#updatedata">
-                                                    <i class="fa-lg fas fa-edit text-white" style="font-size: 10px;"></i>
-                                                </a>
-                                                <a href="#" class="btn bg-gradient-danger" data-bs-toggle="tooltip"
-                                                    data-bs-original-title="ลบข้อมูล">
-                                                    <i class="fa-lg cursor-pointer fas fa-trash text-white"
-                                                        style="font-size: 10px;"></i>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                    @endforeach --}}
                                 </tbody>
                             </table>
                         </div>
