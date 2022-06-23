@@ -62,6 +62,11 @@
         body {
             font-family: 'IBM Plex Sans Thai', sans-serif;
         }
+
+        .card .card-body {
+            font-family: 'IBM Plex Sans Thai', sans-serif;
+            padding: 1.5rem;
+        }
     </style>
 </head>
 
