@@ -141,7 +141,7 @@
                     <div class="card-body">
                         <div class="table-responsive p-0">
                             <table id="myTable" class="table align-items-center mb-0">
-                                <thead>
+                                <thead class="alert-dark">
                                     <tr>
                                         <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7">
                                             #
