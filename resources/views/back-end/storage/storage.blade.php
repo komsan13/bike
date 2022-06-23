@@ -62,31 +62,31 @@
             <table class="table align-items-center mb-0">
               <thead>
                 <tr>
-                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                  <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7">
                     #
                   </th>
-                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                  <th class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">
                     สถานะรถ
                   </th>
-                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                  <th class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">
                     ข้อมูล
                   </th>
-                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                  <th class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">
                     ท้าย
                   </th>
-                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                  <th class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">
                     ซิว
                   </th>
-                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                  <th class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">
                     รูปภาพขวา/ซ้าย
                   </th>
-                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                  <th class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">
                     สำเนา
                   </th>
-                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                  <th class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">
                     สถานะการขาย
                   </th>
-                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                  <th class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">
                     จัดการ
                   </th>
                 </tr>

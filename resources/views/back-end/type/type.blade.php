@@ -114,9 +114,9 @@
     </div>
   </div>
 </div>
-<script>
+@endsection
+{{-- <script>
     $(document).ready( function () {
     $('#myTable').DataTable();
 } );
-</script>
-@endsection
+</script> --}}
