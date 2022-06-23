@@ -25,24 +25,16 @@
                                 </div>
                                 <div class="modal-body">
                                     <div class="mb-3">
-                                        <label for="" class="form-label">ยี่ห้อรถ</label>
+                                        <label for="" class="form-label">ชื่อ-สกุล</label>
                                         <input type="text" class="form-control" id="">
                                     </div>
                                     <div class="mb-3">
-                                        <label for="" class="form-label">รุ่นรถ</label>
+                                        <label for="" class="form-label">เบอร์โทรศัพท์</label>
                                         <input type="text" class="form-control" id="">
                                     </div>
                                     <div class="mb-3">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label for="" class="form-label">ปีรถ</label>
-                                                <input type="text" maxlength="4" class="form-control" id="">
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label for="" class="form-label">สีรถ</label>
-                                                <input type="text" class="form-control" id="">
-                                            </div>
-                                        </div>
+                                        <label for="" class="form-label">เลขประจำตัวประชาชน</label>
+                                        <input type="text" maxlength="13" class="form-control" id="">
                                     </div>
                                 </div>
                                 <div class="modal-footer">
@@ -66,24 +58,16 @@
                                 </div>
                                 <div class="modal-body">
                                     <div class="mb-3">
-                                        <label for="" class="form-label">ยี่ห้อรถ</label>
+                                        <label for="" class="form-label">ชื่อ-สกุล</label>
                                         <input type="text" class="form-control" id="">
                                     </div>
                                     <div class="mb-3">
-                                        <label for="" class="form-label">รุ่นรถ</label>
+                                        <label for="" class="form-label">เบอร์โทรศัพท์</label>
                                         <input type="text" class="form-control" id="">
                                     </div>
                                     <div class="mb-3">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label for="" class="form-label">ปีรถ</label>
-                                                <input type="number" maxlength="4" class="form-control" id="">
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label for="" class="form-label">สีรถ</label>
-                                                <input type="text" class="form-control" id="">
-                                            </div>
-                                        </div>
+                                        <label for="" class="form-label">เลขประจำตัวประชาชน</label>
+                                        <input type="text" maxlength="13" class="form-control" id="">
                                     </div>
                                 </div>
                                 <div class="modal-footer">
@@ -107,19 +91,15 @@
                                         </th>
                                         <th
                                             class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">
-                                            ยี่ห้อรถ
+                                            ชื่อ-สกุล
                                         </th>
                                         <th
                                             class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">
-                                            รุ่นรถ
+                                            เบอร์โทรศัพท์
                                         </th>
                                         <th
                                             class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">
-                                            ปีรถ
-                                        </th>
-                                        <th
-                                            class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">
-                                            สีรถ
+                                            เลขประจำตัวประชาชน
                                         </th>
                                         <th
                                             class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">
@@ -133,19 +113,13 @@
                                             <p class="text-secondary text-xs font-weight-normal">1</p>
                                         </td>
                                         <td class="text-center">
-                                            <p class="text-secondary text-xs font-weight-normal">Honda</p>
+                                            <p class="text-secondary text-xs font-weight-normal">khomsan chartsom</p>
                                         </td>
                                         <td class="text-center">
-                                            <span
-                                                class="text-secondary text-xs font-weight-normal">CB1000R</span>
+                                            <span class="text-secondary text-xs font-weight-normal">0657013469</span>
                                         </td>
                                         <td class="text-center">
-                                            <span
-                                                class="text-secondary text-xs font-weight-normal">2022</span>
-                                        </td>
-                                        <td class="text-center">
-                                            <span
-                                                class="text-secondary text-xs font-weight-normal">สีดำ</span>
+                                            <span class="text-secondary text-xs font-weight-normal">132-xxxxxxxxx-0</span>
                                         </td>
                                         <td class="text-center">
                                             <a href="#" class="btn bg-gradient-warning" data-bs-toggle="modal"
@@ -164,19 +138,13 @@
                                             <p class="text-secondary text-xs font-weight-normal">2</p>
                                         </td>
                                         <td class="text-center">
-                                            <p class="text-secondary text-xs font-weight-normal">Honda</p>
+                                            <p class="text-secondary text-xs font-weight-normal">chartsom khomsan</p>
                                         </td>
                                         <td class="text-center">
-                                            <span
-                                                class="text-secondary text-xs font-weight-normal">CB300R</span>
+                                            <span class="text-secondary text-xs font-weight-normal">0615933891</span>
                                         </td>
                                         <td class="text-center">
-                                            <span
-                                                class="text-secondary text-xs font-weight-normal">2022</span>
-                                        </td>
-                                        <td class="text-center">
-                                            <span
-                                                class="text-secondary text-xs font-weight-normal">สีดำแดง</span>
+                                            <span class="text-secondary text-xs font-weight-normal">132-xxxxxxxxx-1</span>
                                         </td>
                                         <td class="text-center">
                                             <a href="#" class="btn bg-gradient-warning" data-bs-toggle="modal"
@@ -190,39 +158,6 @@
                                             </a>
                                         </td>
                                     </tr>
-                                    {{-- @foreach ($types as $type)
-                                        <tr>
-                                            <td class="ps-4">
-                                                <p class="text-xs font-weight-bold mb-0">{{ $type->id }}</p>
-                                            </td>
-                                            <td class="text-center">
-                                                <p class="text-xs font-weight-bold mb-0">{{ $type->type }}</p>
-                                            </td>
-                                            <td class="text-center">
-                                                <span
-                                                    class="text-secondary text-xs font-weight-bold">{{ $type->model }}</span>
-                                            </td>
-                                            <td class="text-center">
-                                                <span
-                                                    class="text-secondary text-xs font-weight-bold">{{ $type->year }}</span>
-                                            </td>
-                                            <td class="text-center">
-                                                <span
-                                                    class="text-secondary text-xs font-weight-bold">{{ $type->color }}</span>
-                                            </td>
-                                            <td class="text-center">
-                                                <a href="#" class="btn bg-gradient-warning" data-bs-toggle="modal"
-                                                    data-bs-target="#updatedata">
-                                                    <i class="fa-lg fas fa-edit text-white" style="font-size: 10px;"></i>
-                                                </a>
-                                                <a href="#" class="btn bg-gradient-danger" data-bs-toggle="tooltip"
-                                                    data-bs-original-title="ลบข้อมูล">
-                                                    <i class="fa-lg cursor-pointer fas fa-trash text-white"
-                                                        style="font-size: 10px;"></i>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                    @endforeach --}}
                                 </tbody>
                             </table>
                         </div>

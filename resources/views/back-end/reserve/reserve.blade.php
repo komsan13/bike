@@ -136,16 +136,13 @@
                                             <p class="text-secondary text-xs font-weight-normal">Honda</p>
                                         </td>
                                         <td class="text-center">
-                                            <span
-                                                class="text-secondary text-xs font-weight-normal">CB1000R</span>
+                                            <span class="text-secondary text-xs font-weight-normal">CB1000R</span>
                                         </td>
                                         <td class="text-center">
-                                            <span
-                                                class="text-secondary text-xs font-weight-normal">2022</span>
+                                            <span class="text-secondary text-xs font-weight-normal">2022</span>
                                         </td>
                                         <td class="text-center">
-                                            <span
-                                                class="text-secondary text-xs font-weight-normal">สีดำ</span>
+                                            <span class="text-secondary text-xs font-weight-normal">สีดำ</span>
                                         </td>
                                         <td class="text-center">
                                             <a href="#" class="btn bg-gradient-warning" data-bs-toggle="modal"
@@ -167,16 +164,13 @@
                                             <p class="text-secondary text-xs font-weight-normal">Honda</p>
                                         </td>
                                         <td class="text-center">
-                                            <span
-                                                class="text-secondary text-xs font-weight-normal">CB300R</span>
+                                            <span class="text-secondary text-xs font-weight-normal">CB300R</span>
                                         </td>
                                         <td class="text-center">
-                                            <span
-                                                class="text-secondary text-xs font-weight-normal">2022</span>
+                                            <span class="text-secondary text-xs font-weight-normal">2022</span>
                                         </td>
                                         <td class="text-center">
-                                            <span
-                                                class="text-secondary text-xs font-weight-normal">สีดำแดง</span>
+                                            <span class="text-secondary text-xs font-weight-normal">สีดำแดง</span>
                                         </td>
                                         <td class="text-center">
                                             <a href="#" class="btn bg-gradient-warning" data-bs-toggle="modal"

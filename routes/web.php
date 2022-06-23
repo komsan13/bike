@@ -9,6 +9,10 @@ use App\Http\Controllers\SessionsController;
 //
 use App\Http\Controllers\typeController;
 use App\Http\Controllers\storageController;
+use App\Http\Controllers\memberController;
+use App\Http\Controllers\roleController;
+use App\Http\Controllers\usersController;
+use App\Http\Controllers\reserveController;
 //
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Password;
@@ -78,6 +82,22 @@ Route::group(['middleware' => 'auth'], function () {
 
 	Route::prefix('storage')->group(function () {
 		Route::get('/', [storageController::class, 'storage']);
+	});
+
+	Route::prefix('member')->group(function () {
+		Route::get('/', [memberController::class, 'member']);
+	});
+
+	Route::prefix('role')->group(function () {
+		Route::get('/', [roleController::class, 'role']);
+	});
+
+	Route::prefix('users')->group(function () {
+		Route::get('/', [usersController::class, 'users']);
+	});
+
+	Route::prefix('reserve')->group(function () {
+		Route::get('/', [reserveController::class, 'reserve']);
 	});
 });
 
