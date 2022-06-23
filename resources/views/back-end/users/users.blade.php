@@ -175,10 +175,10 @@
                                 <tbody>
                                     <tr>
                                         <td>
-                                            <p class="text-secondary text-xs font-weight-normal">1</p>
+                                            <span class="text-secondary text-xs font-weight-normal">1</span>
                                         </td>
                                         <td class="text-center">
-                                            <p class="text-secondary text-xs font-weight-normal">komsan</p>
+                                            <span class="text-secondary text-xs font-weight-normal">komsan</span>
                                         </td>
                                         <td class="text-center">
                                             <span class="text-secondary text-xs font-weight-normal">admin@gmail.com</span>

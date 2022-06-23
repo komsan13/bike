@@ -110,10 +110,10 @@
                                 <tbody>
                                     <tr>
                                         <td>
-                                            <p class="text-secondary text-xs font-weight-normal">1</p>
+                                            <span class="text-secondary text-xs font-weight-normal">1</span>
                                         </td>
                                         <td class="text-center">
-                                            <p class="text-secondary text-xs font-weight-normal">khomsan chartsom</p>
+                                            <span class="text-secondary text-xs font-weight-normal">khomsan chartsom</span>
                                         </td>
                                         <td class="text-center">
                                             <span class="text-secondary text-xs font-weight-normal">0657013469</span>
@@ -135,10 +135,10 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            <p class="text-secondary text-xs font-weight-normal">2</p>
+                                            <span class="text-secondary text-xs font-weight-normal">2</span>
                                         </td>
                                         <td class="text-center">
-                                            <p class="text-secondary text-xs font-weight-normal">chartsom khomsan</p>
+                                            <span class="text-secondary text-xs font-weight-normal">chartsom khomsan</span>
                                         </td>
                                         <td class="text-center">
                                             <span class="text-secondary text-xs font-weight-normal">0615933891</span>

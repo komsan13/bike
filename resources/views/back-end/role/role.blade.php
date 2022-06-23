@@ -192,10 +192,10 @@
                                 <tbody>
                                     <tr>
                                         <td>
-                                            <p class="text-secondary text-xs font-weight-normal">1</p>
+                                            <span class="text-secondary text-xs font-weight-normal">1</span>
                                         </td>
                                         <td class="text-center">
-                                            <p class="text-secondary text-xs font-weight-normal">ผู้ดูแลระบบ</p>
+                                            <span class="text-secondary text-xs font-weight-normal">ผู้ดูแลระบบ</span>
                                         </td>
                                         <td class="text-center">
                                             <span class="text-secondary text-xs font-weight-normal">6/23/2022</span>

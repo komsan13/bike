@@ -130,10 +130,10 @@
                                 <tbody>
                                     <tr>
                                         <td>
-                                            <p class="text-secondary text-xs font-weight-normal">1</p>
+                                            <span class="text-secondary text-xs font-weight-normal">1</span>
                                         </td>
                                         <td class="text-center">
-                                            <p class="text-secondary text-xs font-weight-normal">Honda</p>
+                                            <span class="text-secondary text-xs font-weight-normal">Honda</span>
                                         </td>
                                         <td class="text-center">
                                             <span
@@ -161,10 +161,10 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            <p class="text-secondary text-xs font-weight-normal">2</p>
+                                            <span class="text-secondary text-xs font-weight-normal">2</span>
                                         </td>
                                         <td class="text-center">
-                                            <p class="text-secondary text-xs font-weight-normal">Honda</p>
+                                            <span class="text-secondary text-xs font-weight-normal">Honda</span>
                                         </td>
                                         <td class="text-center">
                                             <span

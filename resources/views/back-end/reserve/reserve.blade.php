@@ -114,13 +114,13 @@
                                 <tbody>
                                     <tr>
                                         <td>
-                                            <p class="text-secondary text-xs font-weight-normal">1</p>
+                                            <span class="text-secondary text-xs font-weight-normal">1</span>
                                         </td>
                                         <td class="text-center">
-                                            <p class="text-secondary text-xs font-weight-normal">20220623-0001</p>
+                                            <span class="text-secondary text-xs font-weight-normal">20220623-0001</span>
                                         </td>
                                         <td class="text-center">
-                                            <p class="text-secondary text-xs font-weight-normal">Honda</p>
+                                            <span class="text-secondary text-xs font-weight-normal">Honda</span>
                                         </td>
                                         <td class="text-center">
                                             <span class="text-secondary text-xs font-weight-normal">CB1000R</span>
@@ -145,13 +145,13 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            <p class="text-secondary text-xs font-weight-normal">2</p>
+                                            <span class="text-secondary text-xs font-weight-normal">2</span>
                                         </td>
                                         <td class="text-center">
-                                            <p class="text-secondary text-xs font-weight-normal">20220623-0002</p>
+                                            <span class="text-secondary text-xs font-weight-normal">20220623-0002</span>
                                         </td>
                                         <td class="text-center">
-                                            <p class="text-secondary text-xs font-weight-normal">Honda</p>
+                                            <span class="text-secondary text-xs font-weight-normal">Honda</span>
                                         </td>
                                         <td class="text-center">
                                             <span class="text-secondary text-xs font-weight-normal">CB300R</span>

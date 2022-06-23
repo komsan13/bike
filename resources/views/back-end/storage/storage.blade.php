@@ -317,7 +317,7 @@
                                 <tbody>
                                     <tr>
                                         <td class="ps-4">
-                                            <p class="text-xs font-weight-bold mb-0">2</p>
+                                            <span class="text-xs font-weight-normal mb-0">2</span>
                                         </td>
                                         <td class="text-center">
                                             <div>
@@ -326,24 +326,24 @@
                                             </div>
                                         </td>
                                         <td class="text-center">
-                                            <p class="text-xs font-weight-bold mb-0">
-                                                Honda</p>
+                                            <span class="text-xs font-weight-normal mb-0">
+                                                Honda</span>
                                         </td>
                                         <td class="text-center">
-                                            <span class="text-secondary text-xs font-weight-bold">CB1000R</span>
+                                            <span class="text-secondary text-xs font-weight-normal">CB1000R</span>
                                         </td>
                                         <td class="text-center">
-                                            <span class="text-secondary text-xs font-weight-bold">2022</span>
+                                            <span class="text-secondary text-xs font-weight-normal">2022</span>
                                         </td>
                                         <td class="text-center">
-                                            <span class="text-secondary text-xs font-weight-bold">สีดำ</span>
+                                            <span class="text-secondary text-xs font-weight-normal">สีดำ</span>
                                         </td>
                                         <td class="text-center">
-                                            <span class="text-secondary text-xs font-weight-bold">1,000,000</span>
+                                            <span class="text-secondary text-xs font-weight-normal">1,000,000</span>
                                         </td>
                                         <td class="text-center">
                                             <span
-                                                class="text-xs font-weight-bold mb-0 badge rounded-pill bg-success">จองแล้ว</span>
+                                                class="text-xs font-weight-normal mb-0 badge rounded-pill bg-success">จองแล้ว</span>
                                         </td>
                                         <td class="text-center">
                                             <a href="#" class="btn bg-gradient-primary ">
@@ -365,7 +365,7 @@
                                     </tr>
                                     <tr>
                                         <td class="ps-4">
-                                            <p class="text-xs font-weight-bold mb-0">1</p>
+                                            <span class="text-xs font-weight-normal mb-0">1</span>
                                         </td>
                                         <td class="text-center">
                                             <div>
@@ -374,24 +374,24 @@
                                             </div>
                                         </td>
                                         <td class="text-center">
-                                            <p class="text-xs font-weight-bold mb-0">
-                                                Honda</p>
+                                            <span class="text-xs font-weight-normal mb-0">
+                                                Honda</span>
                                         </td>
                                         <td class="text-center">
-                                            <span class="text-secondary text-xs font-weight-bold">CB300R</span>
+                                            <span class="text-secondary text-xs font-weight-normal">CB300R</span>
                                         </td>
                                         <td class="text-center">
-                                            <span class="text-secondary text-xs font-weight-bold">2022</span>
+                                            <span class="text-secondary text-xs font-weight-normal">2022</span>
                                         </td>
                                         <td class="text-center">
-                                            <span class="text-secondary text-xs font-weight-bold">สีดำแดง</span>
+                                            <span class="text-secondary text-xs font-weight-normal">สีดำแดง</span>
                                         </td>
                                         <td class="text-center">
-                                            <span class="text-secondary text-xs font-weight-bold">1,000,000</span>
+                                            <span class="text-secondary text-xs font-weight-normal">1,000,000</span>
                                         </td>
                                         <td class="text-center">
                                             <span
-                                                class="text-xs font-weight-bold mb-0 badge rounded-pill bg-success">จองแล้ว</span>
+                                                class="text-xs font-weight-normal mb-0 badge rounded-pill bg-success">จองแล้ว</span>
                                         </td>
                                         <td class="text-center">
                                             <a href="#" class="btn bg-gradient-primary ">
