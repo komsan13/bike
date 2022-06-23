@@ -8,6 +8,7 @@ use App\Http\Controllers\ResetController;
 use App\Http\Controllers\SessionsController;
 // 
 use App\Http\Controllers\typeController;
+use App\Http\Controllers\storageController;
 // 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Password;
@@ -73,13 +74,10 @@ Route::group(['middleware' => 'auth'], function () {
 
 	Route::prefix('type')->group(function () {
 		Route::get('/', [typeController::class, 'index']);
-		Route::post('/datatable', [typeController::class, 'datatable']);
-		Route::get('/add', [typeController::class, 'add']);
-		Route::post('/add', [typeController::class, 'insert']);
-		Route::get('/{id}', [typeController::class, 'edit'])->where(['id' => '[0-9]+']);
-		Route::post('/{id}', [typeController::class, 'update'])->where(['id' => '[0-9]+']);
-		Route::get('/status/{id}', [typeController::class, 'status'])->where(['id' => '[0-9]+']);
-		Route::get('/destroy', [typeController::class, 'destroy']);
+	});
+
+	Route::prefix('storage')->group(function () {
+		Route::get('/', [storageController::class, 'index']);
 	});
 });
 
