@@ -11,7 +11,7 @@
             <div>
               <h5 class="mb-0"><i class="fas fa-align-left"></i> {{$name_page}}</h5>
             </div>
-            <a href="#" class="btn bg-gradient-success btn-sm mb-0" type="button" data-bs-toggle="modal" data-bs-target="#insertdata">+&nbsp; เพิ่มข้อมูล</a>
+            <a href="#" class="btn bg-gradient-success mb-0" type="button" data-bs-toggle="modal" data-bs-target="#insertdata">+&nbsp; เพิ่มข้อมูล</a>
           </div>
         </div>
         <!-- Modal -->
@@ -97,10 +97,10 @@
                     <span class="text-secondary text-xs font-weight-bold">{{$type->model}}</span>
                   </td>
                   <td class="text-center">
-                    <a href="#" class="btn bg-gradient-warning btn-sm" data-bs-toggle="modal" data-bs-target="#updatedata">
+                    <a href="#" class="btn bg-gradient-warning" data-bs-toggle="modal" data-bs-target="#updatedata">
                       <i class="fa-lg fas fa-edit text-white" style="font-size: 10px;"></i>
                     </a>
-                    <a href="#" class="btn bg-gradient-danger btn-sm" data-bs-toggle="tooltip" data-bs-original-title="ลบข้อมูล">
+                    <a href="#" class="btn bg-gradient-danger" data-bs-toggle="tooltip" data-bs-original-title="ลบข้อมูล">
                       <i class="fa-lg cursor-pointer fas fa-trash text-white" style="font-size: 10px;"></i>
                     </a>
                   </td>
