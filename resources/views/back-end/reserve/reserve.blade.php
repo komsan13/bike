@@ -102,35 +102,22 @@
                             <table id="myTable" class="table align-items-center mb-0">
                                 <thead>
                                     <tr>
-                                        <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7">
-                                            #
-                                        </th>
-                                        <th
-                                            class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">
-                                            ยี่ห้อรถ
-                                        </th>
-                                        <th
-                                            class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">
-                                            รุ่นรถ
-                                        </th>
-                                        <th
-                                            class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">
-                                            ปีรถ
-                                        </th>
-                                        <th
-                                            class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">
-                                            สีรถ
-                                        </th>
-                                        <th
-                                            class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">
-                                            จัดการข้อมูล
-                                        </th>
+                                        <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7">#</th>
+                                        <th class="text-uppercase text-secondary text-center text-xs font-weight-bolder opacity-7">เลขใบจอง</th>
+                                        <th class="text-center text-uppercase text-secondary text-center text-xs font-weight-bolder opacity-7">ยี่ห้อรถ</th>
+                                        <th class="text-center text-uppercase text-secondary text-center text-xs font-weight-bolder opacity-7">รุ่นรถ</th>
+                                        <th class="text-center text-uppercase text-secondary text-center text-xs font-weight-bolder opacity-7">ปีรถ</th>
+                                        <th class="text-center text-uppercase text-secondary text-center text-xs font-weight-bolder opacity-7">สีรถ</th>
+                                        <th class="text-center text-uppercase text-secondary text-center text-xs font-weight-bolder opacity-7">จัดการข้อมูล</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <td>
                                             <p class="text-secondary text-xs font-weight-normal">1</p>
+                                        </td>
+                                        <td class="text-center">
+                                            <p class="text-secondary text-xs font-weight-normal">20220623-0001</p>
                                         </td>
                                         <td class="text-center">
                                             <p class="text-secondary text-xs font-weight-normal">Honda</p>
@@ -159,6 +146,9 @@
                                     <tr>
                                         <td>
                                             <p class="text-secondary text-xs font-weight-normal">2</p>
+                                        </td>
+                                        <td class="text-center">
+                                            <p class="text-secondary text-xs font-weight-normal">20220623-0002</p>
                                         </td>
                                         <td class="text-center">
                                             <p class="text-secondary text-xs font-weight-normal">Honda</p>
