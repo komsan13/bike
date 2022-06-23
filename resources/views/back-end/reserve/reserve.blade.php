@@ -24,7 +24,7 @@
                                         {{ $name_page }}</b>
                                 </div>
                                 <div class="modal-body">
-                                    <div class="mb-3">
+                                    {{-- <div class="mb-3">
                                         <label for="" class="form-label">ยี่ห้อรถ</label>
                                         <input type="text" class="form-control" id="">
                                     </div>
@@ -43,7 +43,7 @@
                                                 <input type="text" class="form-control" id="">
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn bg-gradient-secondary" data-bs-dismiss="modal"><i
@@ -65,7 +65,7 @@
                                         {{ $name_page }}</b>
                                 </div>
                                 <div class="modal-body">
-                                    <div class="mb-3">
+                                    {{-- <div class="mb-3">
                                         <label for="" class="form-label">ยี่ห้อรถ</label>
                                         <input type="text" class="form-control" id="">
                                     </div>
@@ -84,7 +84,7 @@
                                                 <input type="text" class="form-control" id="">
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn bg-gradient-secondary" data-bs-dismiss="modal"><i

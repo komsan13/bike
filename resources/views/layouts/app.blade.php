@@ -67,6 +67,10 @@
             font-family: 'IBM Plex Sans Thai', sans-serif;
             padding: 1.5rem;
         }
+
+        .btn {
+            margin-bottom: 0rem;
+        }
     </style>
 </head>
 
