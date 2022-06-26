@@ -78,6 +78,19 @@
                     <span class="nav-link-text ms-1">สต๊อกสินค้า</span>
                 </a>
             </li>
+            <li class="nav-item mt-3">
+                <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">จัดการข้อมูลการขาย</h6>
+            </li>
+            <li class="nav-item pb-2">
+                <a class="nav-link {{ Request::is('reserve') ? 'active' : '' }}" href="{{ url('reserve') }}">
+                    <div
+                        class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="fas fa-lg fa-book ps-2 pe-2 text-center text-dark {{ Request::is('reserve') ? 'text-white' : 'text-dark' }} "
+                            aria-hidden="true"></i>
+                    </div>
+                    <span class="nav-link-text ms-1">สร้างใบจอง/ใบมัดจำรถ</span>
+                </a>
+            </li>
             <li class="nav-item mt-2">
                 <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">จัดการข้อมูลลูกค้า</h6>
             </li>
@@ -89,7 +102,8 @@
                             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                             <title>customer-support</title>
                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                <g transform="translate(-1717.000000, -291.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                                <g transform="translate(-1717.000000, -291.000000)" fill="#FFFFFF"
+                                    fill-rule="nonzero">
                                     <g transform="translate(1716.000000, 291.000000)">
                                         <g transform="translate(1.000000, 0.000000)">
                                             <path class="color-background opacity-6"
@@ -111,29 +125,8 @@
                 </a>
             </li>
             <li class="nav-item mt-3">
-                <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">จัดการข้อมูลการขาย</h6>
-            </li>
-            <li class="nav-item pb-2">
-                <a class="nav-link {{ Request::is('reserve') ? 'active' : '' }}" href="{{ url('reserve') }}">
-                    <div
-                        class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="fas fa-lg fa-book ps-2 pe-2 text-center text-dark {{ Request::is('reserve') ? 'text-white' : 'text-dark' }} "
-                            aria-hidden="true"></i>
-                    </div>
-                    <span class="nav-link-text ms-1">สร้างใบจอง/ใบมัดจำรถ</span>
-                </a>
-            </li>
-            <li class="nav-item mt-3">
                 <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">เมรูสำหรับผู้พัฒนา</h6>
             </li>
-            <!-- <li class="nav-item pb-2">
-        <a class="nav-link {{ Request::is('user-management') ? 'active' : '' }}" href="{{ url('user-management') }}">
-          <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-            <i class="fas fa-lg fa-database ps-2 pe-2 text-center text-dark {{ Request::is('user-management') ? 'text-white' : 'text-dark' }} " aria-hidden="true"></i>
-          </div>
-          <span class="nav-link-text ms-1">ข้อมูลรถ</span>
-        </a>
-      </li> -->
             <li class="nav-item">
                 <a class="nav-link {{ Request::is('role') ? 'active' : '' }}" href="{{ url('role') }}">
                     <div

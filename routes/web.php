@@ -78,6 +78,10 @@ Route::group(['middleware' => 'auth'], function () {
 
 	Route::prefix('type')->group(function () {
 		Route::get('/', [typeController::class, 'type']);
+		Route::post('/type-add', [typeController::class, 'type_add']);
+		Route::get('/type-delete/{id}', [typeController::class, 'type_delete']);
+		Route::post('/type-edit/{id}', [typeController::class, 'type_edit']);
+		Route::post('/type-update', [typeController::class, 'type_update']);
 	});
 
 	Route::prefix('storage')->group(function () {
@@ -86,6 +90,10 @@ Route::group(['middleware' => 'auth'], function () {
 
 	Route::prefix('member')->group(function () {
 		Route::get('/', [memberController::class, 'member']);
+		Route::post('/member-add', [memberController::class, 'member_add']);
+		Route::get('/member-delete/{id}', [memberController::class, 'member_delete']);
+        Route::post('/member-edit/{id}', [memberController::class, 'member_edit']);
+        Route::post('/member-update', [memberController::class, 'member_update']);
 	});
 
 	Route::prefix('role')->group(function () {

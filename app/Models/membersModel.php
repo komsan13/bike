@@ -5,12 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class typesModel extends Model
+class membersModel extends Model
 {
     use HasFactory;
-    protected $table = 'types';
+    protected $table = 'members';
     protected $primaryKey = 'id';
-    protected $fillable = ['type','model','year','color','cc','created_at','updated_at'];
+    protected $fillable = ['name','phone','personal','created_at','updated_at'];
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
     public $timestamp = false;
