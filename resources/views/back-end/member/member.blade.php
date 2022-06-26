@@ -1,6 +1,47 @@
 @extends('layouts.user_type.auth')
 
 @section('content')
+    @if (session('success'))
+        <div class="position-absolute bottom-0 end-0 p-3" style="z-index: 11">
+            <div id="liveToast" class="toast hide " role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header alert-success text-white"
+                    style="border-top-left-radius: 10px; border-top-right-radius: 10px;">
+                    <strong class="me-auto"><i class="fa-solid fa-circle-check"></i> Successfully</strong>
+                    {{-- <small>11 mins ago</small> --}}
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body alert-success text-white"
+                    style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
+                    {{ session('success') }}
+                </div>
+            </div>
+        </div>
+        <script>
+            setTimeout(() => {
+                $('.toast').hide('show');
+            }, 10000);
+        </script>
+    @elseif (session('error'))
+        <div class="position-absolute bottom-0 end-0 p-3" style="z-index: 11">
+            <div id="liveToast" class="toast hide " role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header alert-warning text-white"
+                    style="border-top-left-radius: 10px; border-top-right-radius: 10px;">
+                    <strong class="me-auto"><i class="fas fa-exclamation-triangle"></i> Warning</strong>
+                    {{-- <small>11 mins ago</small> --}}
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body alert-warning text-white"
+                    style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
+                    {{ session('success') }}
+                </div>
+            </div>
+        </div>
+        <script>
+            setTimeout(() => {
+                $('.toast').hide('show');
+            }, 10000);
+        </script>
+    @endif
     <div>
         <div class="row">
             <div class="col-12">
@@ -32,7 +73,8 @@
                                         </div>
                                         <div class="mb-3">
                                             <label for="" class="form-label">เบอร์โทรศัพท์</label>
-                                            <input type="text" maxlength="10" class="form-control" id="phone" name="phone">
+                                            <input type="text" maxlength="10" class="form-control" id="phone"
+                                                name="phone">
                                         </div>
                                         <div class="mb-3">
                                             <label for="" class="form-label">เลขประจำตัวประชาชน</label>
@@ -72,7 +114,8 @@
                                         </div>
                                         <div class="mb-3">
                                             <label for="" class="form-label">เบอร์โทรศัพท์</label>
-                                            <input type="text" maxlength="10" class="form-control" id="edit_phone" name="phone">
+                                            <input type="text" maxlength="10" class="form-control" id="edit_phone"
+                                                name="phone">
                                         </div>
                                         <div class="mb-3">
                                             <label for="" class="form-label">เลขประจำตัวประชาชน</label>
@@ -95,33 +138,6 @@
                     </div>
                     <!-- end model -->
                     <div class="card-body">
-                        @if (session('success'))
-                            <div class="alert alert-dark text-success alert-dismissible fade show" role="alert">
-                                <span class="alert-icon"><i class="fas fa-solid fa-check"></i> </span>
-                                <span class="alert-text"><strong>successfull!</strong> {{ session('success') }} </span>
-                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <script>
-                                setTimeout(() => {
-                                    $(".alert").alert('close')
-                                }, 5000);
-                            </script>
-                        @elseif (session('error'))
-                            <div class="alert alert-dark text-danger alert-dismissible fade show" role="alert">
-                                <span class="alert-icon"><i class="fas fa-solid fa-check"></i> </span>
-                                <span class="alert-text"><strong>error!</strong> {{ session('error') }} </span>
-                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <script>
-                                setTimeout(() => {
-                                    $(".alert").alert('close')
-                                }, 5000);
-                            </script>
-                        @endif
                         <div class="table-responsive p-0">
                             <table id="myTable" class="table align-items-center mb-0">
                                 <thead class="alert-dark">
@@ -174,15 +190,16 @@
                                                     class="text-secondary text-xs font-weight-normal">{{ $row->personal }}</span>
                                             </td>
                                             <td class="text-center">
-                                                <span class="text-secondary text-xs font-weight-normal">{{ $row->created_at }}</span>
+                                                <span
+                                                    class="text-secondary text-xs font-weight-normal">{{ $row->created_at }}</span>
                                             </td>
                                             <td class="text-center">
-                                                <a href="#" onclick="get_data('{{ $row->id }}')"
+                                                <a href="#" onclick="get_data('{{ $row->id }}')" style="padding: 15px;"
                                                     class="btn bg-gradient-warning" data-bs-toggle="modal"
                                                     data-bs-target="#updatedata">
                                                     <i class="fa-lg fas fa-edit text-white" style="font-size: 10px;"></i>
                                                 </a>
-                                                <a href="{{ url('member/member-delete/' . $row->id) }}"
+                                                <a href="{{ url('member/member-delete/' . $row->id) }}" style="padding: 15px;"
                                                     onclick="return confirm('ต้องการลบข้อมูลหรือไม !')"
                                                     class="btn bg-gradient-danger" data-bs-toggle="tooltip"
                                                     data-bs-original-title="ลบข้อมูล">
@@ -224,4 +241,7 @@
             }
         });
     }
+    $(document).ready(function() {
+        $('.toast').toast('show');
+    });
 </script>
