@@ -98,6 +98,11 @@ Route::group(['middleware' => 'auth'], function () {
 
 	Route::prefix('role')->group(function () {
 		Route::get('/', [roleController::class, 'role']);
+		Route::post('/role-add', [roleController::class, 'role_add']);
+		Route::post('/menu-add', [roleController::class, 'menu_add']);
+		Route::post('/role-select/{id}', [roleController::class, 'role_select']);
+		Route::get('/role-delete/{id}', [roleController::class, 'role_delete']);
+		Route::post('/role-edit/{id}', [roleController::class, 'role_edit']);
 	});
 
 	Route::prefix('users')->group(function () {

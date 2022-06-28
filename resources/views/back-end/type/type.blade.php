@@ -52,7 +52,7 @@
                                 <h5 class="mb-0"><i class="fas fa-align-left"></i> {{ $name_page }}</h5>
                             </div>
                             <a href="#" class="btn bg-gradient-success mb-0" type="button" data-bs-toggle="modal"
-                                data-bs-target="#insertdata">+&nbsp; เพิ่มข้อมูล</a>
+                                data-bs-target="#insertdata"><i class="fa-solid fa-circle-plus"></i> เพิ่มข้อมูล</a>
                         </div>
                     </div>
                     <!-- Modal -->
@@ -62,7 +62,7 @@
                         <div class="modal-dialog modal-dialog-centered" role="document">
                             <div class="modal-content shadow" style="border-radius: 20px;">
                                 <div class="modal-header">
-                                    <b class="mt-3"><i class="fas fa-solid fa-plus text-success"></i> เพิ่มข้อมูล
+                                    <b class="mt-3"><i class="fa-solid fa-circle-plus text-success"></i> เพิ่มข้อมูล
                                         {{ $name_page }}</b>
                                 </div>
                                 <form action="{{ url('type/type-add') }}" method="POST">
