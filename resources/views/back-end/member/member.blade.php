@@ -51,8 +51,19 @@
                             <div>
                                 <h5 class="mb-0"><i class="fas fa-align-left"></i> {{ $name_page }}</h5>
                             </div>
-                            <a href="#" class="btn bg-gradient-success mb-0" type="button" data-bs-toggle="modal"
-                                data-bs-target="#insertdata"><i class="fa-solid fa-circle-plus"></i> เพิ่มข้อมูล</a>
+                            @foreach ($status as $role_status)
+                                @if ($role_status->status == 'on')
+                                    @foreach ($menu_add as $menu_adds)
+                                        @if ($menu_adds->menu_add != '' && $menu_adds->menu_add == 'on')
+                                            <a href="#" class="btn bg-gradient-success mb-0" type="button"
+                                                data-bs-toggle="modal" data-bs-target="#insertdata"><i
+                                                    class="fa-solid fa-circle-plus"></i> เพิ่มข้อมูล</a>
+                                        @elseif ($menu_adds->menu_add != '' && $menu_adds->menu_add == 'off')
+                                            {{-- off --}}
+                                        @endif
+                                    @endforeach
+                                @endif
+                            @endforeach
                         </div>
                     </div>
                     <!-- Modal -->
@@ -194,18 +205,42 @@
                                                     class="text-secondary text-xs font-weight-normal">{{ $row->created_at }}</span>
                                             </td>
                                             <td class="text-center">
-                                                <a href="#" onclick="get_data('{{ $row->id }}')" style="padding: 15px;"
-                                                    class="btn bg-gradient-warning" data-bs-toggle="modal"
-                                                    data-bs-target="#updatedata">
-                                                    <i class="fa-lg fas fa-edit text-white" style="font-size: 10px;"></i>
-                                                </a>
-                                                <a href="{{ url('member/member-delete/' . $row->id) }}" style="padding: 15px;"
-                                                    onclick="return confirm('ต้องการลบข้อมูลหรือไม !')"
-                                                    class="btn bg-gradient-danger" data-bs-toggle="tooltip"
-                                                    data-bs-original-title="ลบข้อมูล">
-                                                    <i class="fa-lg cursor-pointer fas fa-trash text-white"
-                                                        style="font-size: 10px;"></i>
-                                                </a>
+                                                @foreach ($status as $role_status)
+                                                    @if ($role_status->status == 'on')
+                                                        @foreach ($menu_edit as $menu_edits)
+                                                            @if ($menu_edits->menu_edit != '' && $menu_edits->menu_edit == 'on')
+                                                                <a href="#"
+                                                                    onclick="get_data('{{ $row->id }}')"
+                                                                    style="padding: 15px;" class="btn bg-gradient-warning"
+                                                                    data-bs-toggle="modal" data-bs-target="#updatedata">
+                                                                    <i class="fa-lg fas fa-edit text-white"
+                                                                        style="font-size: 10px;"></i>
+                                                                </a>
+                                                            @elseif ($menu_edits->menu_edit != '' && $menu_edits->menu_edit == 'off')
+                                                                {{-- off --}}
+                                                            @endif
+                                                        @endforeach
+                                                    @endif
+                                                @endforeach
+                                                @foreach ($status as $role_status)
+                                                    @if ($role_status->status == 'on')
+                                                        @foreach ($menu_delete as $menu_deletes)
+                                                            @if ($menu_deletes->menu_delete != '' && $menu_deletes->menu_delete == 'on')
+                                                                <a href="{{ url('member/member-delete/' . $row->id) }}"
+                                                                    style="padding: 15px;"
+                                                                    onclick="return confirm('ต้องการลบข้อมูลหรือไม !')"
+                                                                    class="btn bg-gradient-danger"
+                                                                    data-bs-toggle="tooltip"
+                                                                    data-bs-original-title="ลบข้อมูล">
+                                                                    <i class="fa-lg cursor-pointer fas fa-trash text-white"
+                                                                        style="font-size: 10px;"></i>
+                                                                </a>
+                                                            @elseif ($menu_deletes->menu_delete != '' && $menu_deletes->menu_delete == 'off')
+                                                                {{-- off --}}
+                                                            @endif
+                                                        @endforeach
+                                                    @endif
+                                                @endforeach
                                             </td>
                                         </tr>
                                     @endforeach

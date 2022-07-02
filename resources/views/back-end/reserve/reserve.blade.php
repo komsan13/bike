@@ -102,47 +102,29 @@
                             <table id="myTable" class="table align-items-center mb-0">
                                 <thead class="alert-dark">
                                     <tr>
-                                        <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7">#</th>
-                                        <th class="text-uppercase text-secondary text-center text-xs font-weight-bolder opacity-7">เลขใบจอง</th>
-                                        <th class="text-center text-uppercase text-secondary text-center text-xs font-weight-bolder opacity-7">ยี่ห้อรถ</th>
-                                        <th class="text-center text-uppercase text-secondary text-center text-xs font-weight-bolder opacity-7">รุ่นรถ</th>
-                                        <th class="text-center text-uppercase text-secondary text-center text-xs font-weight-bolder opacity-7">ปีรถ</th>
-                                        <th class="text-center text-uppercase text-secondary text-center text-xs font-weight-bolder opacity-7">สีรถ</th>
-                                        <th class="text-center text-uppercase text-secondary text-center text-xs font-weight-bolder opacity-7">จัดการข้อมูล</th>
+                                        <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7">#
+                                        </th>
+                                        <th
+                                            class="text-uppercase text-secondary text-center text-xs font-weight-bolder opacity-7">
+                                            เลขใบจอง</th>
+                                        <th
+                                            class="text-center text-uppercase text-secondary text-center text-xs font-weight-bolder opacity-7">
+                                            ยี่ห้อรถ</th>
+                                        <th
+                                            class="text-center text-uppercase text-secondary text-center text-xs font-weight-bolder opacity-7">
+                                            รุ่นรถ</th>
+                                        <th
+                                            class="text-center text-uppercase text-secondary text-center text-xs font-weight-bolder opacity-7">
+                                            ปีรถ</th>
+                                        <th
+                                            class="text-center text-uppercase text-secondary text-center text-xs font-weight-bolder opacity-7">
+                                            สีรถ</th>
+                                        <th
+                                            class="text-center text-uppercase text-secondary text-center text-xs font-weight-bolder opacity-7">
+                                            จัดการข้อมูล</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>
-                                            <span class="text-secondary text-xs font-weight-normal">1</span>
-                                        </td>
-                                        <td class="text-center">
-                                            <span class="text-secondary text-xs font-weight-normal">20220623-0001</span>
-                                        </td>
-                                        <td class="text-center">
-                                            <span class="text-secondary text-xs font-weight-normal">Honda</span>
-                                        </td>
-                                        <td class="text-center">
-                                            <span class="text-secondary text-xs font-weight-normal">CB1000R</span>
-                                        </td>
-                                        <td class="text-center">
-                                            <span class="text-secondary text-xs font-weight-normal">2022</span>
-                                        </td>
-                                        <td class="text-center">
-                                            <span class="text-secondary text-xs font-weight-normal">สีดำ</span>
-                                        </td>
-                                        <td class="text-center">
-                                            <a href="#" class="btn bg-gradient-warning" data-bs-toggle="modal"
-                                                data-bs-target="#updatedata">
-                                                <i class="fa-lg fas fa-edit text-white" style="font-size: 10px;"></i>
-                                            </a>
-                                            <a href="#" class="btn bg-gradient-danger" data-bs-toggle="tooltip"
-                                                data-bs-original-title="ลบข้อมูล">
-                                                <i class="fa-lg cursor-pointer fas fa-trash text-white"
-                                                    style="font-size: 10px;"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
                                     <tr>
                                         <td>
                                             <span class="text-secondary text-xs font-weight-normal">2</span>
@@ -163,50 +145,17 @@
                                             <span class="text-secondary text-xs font-weight-normal">สีดำแดง</span>
                                         </td>
                                         <td class="text-center">
-                                            <a href="#" class="btn bg-gradient-warning" data-bs-toggle="modal"
-                                                data-bs-target="#updatedata">
+                                            <a href="#" class="btn bg-gradient-warning" style="padding: 15px;"
+                                                data-bs-toggle="modal" data-bs-target="#updatedata">
                                                 <i class="fa-lg fas fa-edit text-white" style="font-size: 10px;"></i>
                                             </a>
-                                            <a href="#" class="btn bg-gradient-danger" data-bs-toggle="tooltip"
-                                                data-bs-original-title="ลบข้อมูล">
+                                            <a href="#" class="btn bg-gradient-danger" style="padding: 15px;"
+                                                data-bs-toggle="tooltip" data-bs-original-title="ลบข้อมูล">
                                                 <i class="fa-lg cursor-pointer fas fa-trash text-white"
                                                     style="font-size: 10px;"></i>
                                             </a>
                                         </td>
                                     </tr>
-                                    {{-- @foreach ($types as $type)
-                                        <tr>
-                                            <td class="ps-4">
-                                                <p class="text-xs font-weight-bold mb-0">{{ $type->id }}</p>
-                                            </td>
-                                            <td class="text-center">
-                                                <p class="text-xs font-weight-bold mb-0">{{ $type->type }}</p>
-                                            </td>
-                                            <td class="text-center">
-                                                <span
-                                                    class="text-secondary text-xs font-weight-bold">{{ $type->model }}</span>
-                                            </td>
-                                            <td class="text-center">
-                                                <span
-                                                    class="text-secondary text-xs font-weight-bold">{{ $type->year }}</span>
-                                            </td>
-                                            <td class="text-center">
-                                                <span
-                                                    class="text-secondary text-xs font-weight-bold">{{ $type->color }}</span>
-                                            </td>
-                                            <td class="text-center">
-                                                <a href="#" class="btn bg-gradient-warning" data-bs-toggle="modal"
-                                                    data-bs-target="#updatedata">
-                                                    <i class="fa-lg fas fa-edit text-white" style="font-size: 10px;"></i>
-                                                </a>
-                                                <a href="#" class="btn bg-gradient-danger" data-bs-toggle="tooltip"
-                                                    data-bs-original-title="ลบข้อมูล">
-                                                    <i class="fa-lg cursor-pointer fas fa-trash text-white"
-                                                        style="font-size: 10px;"></i>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                    @endforeach --}}
                                 </tbody>
                             </table>
                         </div>

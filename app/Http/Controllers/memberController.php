@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Models\membersModel;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class memberController extends Controller
 {
@@ -18,12 +19,20 @@ class memberController extends Controller
 
     public function member(Request $request)
     {
+        $menu_add = DB::select('select menu_add from menu where role_name = "' . Auth::user()->lavel . '" and menu_name = "member"'); // สิทการเพิ่มข้อมูล
+        $menu_delete = DB::select('select menu_delete from menu where role_name = "' . Auth::user()->lavel . '" and menu_name = "member"'); // สิทการเพิ่มข้อมูล
+        $menu_edit = DB::select('select menu_edit from menu where role_name = "' . Auth::user()->lavel . '" and menu_name = "member"'); // สิทการเพิ่มข้อมูล
+        $users = DB::select('select status from users where email = "' . Auth::user()->email . '"');
         return view("$this->prefix.$this->folder.member", [
             'prefix' => $this->prefix,
             'folder' => $this->folder,
             'segment' => $this->segment,
             'name_page' => $this->name_page,
             'members' => membersModel::all(),
+            'menu_add' => $menu_add,
+            'menu_delete' => $menu_delete,
+            'menu_edit' => $menu_edit,
+            'status' => $users,
         ]);
     }
 
@@ -42,7 +51,8 @@ class memberController extends Controller
         }
     }
 
-    public function member_delete($id){
+    public function member_delete($id)
+    {
         $query = membersModel::destroy($id);
 
         if (@$query) {
@@ -52,11 +62,13 @@ class memberController extends Controller
         }
     }
 
-    public function member_edit($id){
+    public function member_edit($id)
+    {
         return membersModel::where(['id' => $id])->get();
     }
 
-    public function member_update(Request $request){
+    public function member_update(Request $request)
+    {
         $data = membersModel::find($request->id);
         $data->name = $request->name;
         $data->phone = $request->phone;

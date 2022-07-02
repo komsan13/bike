@@ -13,13 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('types', function (Blueprint $table) {
+        Schema::create('menu', function (Blueprint $table) {
             $table->id();
-            $table->string('type');
-            $table->string('model');
-            $table->string('year');
-            $table->string('color');
-            $table->string('cc');
+            $table->string('role_name');
+            $table->string('menu_name');
+            $table->string('menu_read');
+            $table->string('menu_add');
+            $table->string('menu_delete');
+            $table->string('menu_edit');
+            $table->string('menu_report');
+            $table->string('status');
             $table->timestamps();
         });
     }
@@ -31,6 +34,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('types');
+        Schema::dropIfExists('menu');
     }
 };

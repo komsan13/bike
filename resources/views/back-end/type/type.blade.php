@@ -32,7 +32,7 @@
                 </div>
                 <div class="toast-body alert-warning text-white"
                     style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
-                    {{ session('success') }}
+                    {{ session('error') }}
                 </div>
             </div>
         </div>
@@ -51,8 +51,20 @@
                             <div>
                                 <h5 class="mb-0"><i class="fas fa-align-left"></i> {{ $name_page }}</h5>
                             </div>
-                            <a href="#" class="btn bg-gradient-success mb-0" type="button" data-bs-toggle="modal"
-                                data-bs-target="#insertdata"><i class="fa-solid fa-circle-plus"></i> เพิ่มข้อมูล</a>
+                            @foreach ($status as $role_status)
+                                @if ($role_status->status == 'on')
+                                    @foreach ($menu_add as $row)
+                                        @if ($row->menu_add != '' && $row->menu_add == 'on')
+                                            <a href="#" class="btn bg-gradient-success mb-0" type="button"
+                                                data-bs-toggle="modal" data-bs-target="#insertdata"><i
+                                                    class="fa-solid fa-circle-plus"></i> เพิ่มข้อมูล</a>
+                                        @elseif ($row->menu_add != '' && $row->menu_add == 'off')
+                                            {{-- off --}}
+                                        @endif
+                                    @endforeach
+                                @endif
+                            @endforeach
+
                         </div>
                     </div>
                     <!-- Modal -->
@@ -177,7 +189,7 @@
                     <!-- end model -->
                     <div class="card-body">
                         <div class="table-responsive p-0">
-                            <table id="myTable" class="table align-items-center mb-0">
+                            <table id="myTable" class="table table-hover align-items-center mb-0">
                                 <thead class="alert-dark">
                                     <tr>
                                         <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7">
@@ -244,19 +256,42 @@
                                                     class="text-secondary text-xs font-weight-normal">{{ $row->created_at }}</span>
                                             </td>
                                             <td class="text-center">
-                                                <a href="#" class="btn bg-gradient-warning" style="padding: 15px;"
-                                                    onclick="get_data('{{ $row->id }}')" data-bs-toggle="modal"
-                                                    data-bs-target="#updatedata">
-                                                    <i class="fa-lg fas fa-edit text-white" style="font-size: 10px;"></i>
-                                                </a>
-                                                <a href="{{ url('type/type-delete/' . $row->id) }}"
-                                                    style="padding: 15px;"
-                                                    onclick="return confirm('ต้องการลบข้อมูลหรือไม่ !')"
-                                                    class="btn bg-gradient-danger" data-bs-toggle="tooltip"
-                                                    data-bs-original-title="ลบข้อมูล">
-                                                    <i class="fa-lg cursor-pointer fas fa-trash text-white"
-                                                        style="font-size: 10px;"></i>
-                                                </a>
+                                                @foreach ($status as $role_status)
+                                                    @if ($role_status->status == 'on')
+                                                        @foreach ($menu_edit as $menu_edits)
+                                                            @if ($menu_edits->menu_edit != '' && $menu_edits->menu_edit == 'on')
+                                                                <a href="#" class="btn bg-gradient-warning"
+                                                                    style="padding: 15px;"
+                                                                    onclick="get_data('{{ $row->id }}')"
+                                                                    data-bs-toggle="modal" data-bs-target="#updatedata">
+                                                                    <i class="fa-lg fas fa-edit text-white"
+                                                                        style="font-size: 10px;"></i>
+                                                                </a>
+                                                            @elseif ($menu_edits->menu_edit != '' && $menu_edits->menu_edit == 'off')
+                                                                {{-- off --}}
+                                                            @endif
+                                                        @endforeach
+                                                    @endif
+                                                @endforeach
+                                                @foreach ($status as $role_status)
+                                                    @if ($role_status->status == 'on')
+                                                        @foreach ($menu_delete as $menu_deletes)
+                                                            @if ($menu_deletes->menu_delete != '' && $menu_deletes->menu_delete == 'on')
+                                                                <a href="{{ url('type/type-delete/' . $row->id) }}"
+                                                                    style="padding: 15px;"
+                                                                    onclick="return confirm('ต้องการลบข้อมูลหรือไม่ !')"
+                                                                    class="btn bg-gradient-danger"
+                                                                    data-bs-toggle="tooltip"
+                                                                    data-bs-original-title="ลบข้อมูล">
+                                                                    <i class="fa-lg cursor-pointer fas fa-trash text-white"
+                                                                        style="font-size: 10px;"></i>
+                                                                </a>
+                                                            @elseif ($menu_deletes->menu_delete != '' && $menu_deletes->menu_delete == 'off')
+                                                                {{-- off --}}
+                                                            @endif
+                                                        @endforeach
+                                                    @endif
+                                                @endforeach
                                             </td>
                                         </tr>
                                     @endforeach

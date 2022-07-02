@@ -33,6 +33,7 @@ use Illuminate\Support\Facades\Route;
 Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/', [HomeController::class, 'home']);
+
 	Route::get('dashboard', function () {
 		return view('dashboard');
 	})->name('dashboard');
@@ -100,13 +101,21 @@ Route::group(['middleware' => 'auth'], function () {
 		Route::get('/', [roleController::class, 'role']);
 		Route::post('/role-add', [roleController::class, 'role_add']);
 		Route::post('/menu-add', [roleController::class, 'menu_add']);
+		Route::post('/menu-insert', [roleController::class, 'menu_insert']);
 		Route::post('/role-select/{id}', [roleController::class, 'role_select']);
+		Route::post('/menu-select/{id}', [roleController::class, 'menu_select']);
 		Route::get('/role-delete/{id}', [roleController::class, 'role_delete']);
 		Route::post('/role-edit/{id}', [roleController::class, 'role_edit']);
+		Route::post('/role-update', [roleController::class, 'role_update']);
+		Route::post('/menu-update', [roleController::class, 'menu_update']);
 	});
 
 	Route::prefix('users')->group(function () {
 		Route::get('/', [usersController::class, 'users']);
+		Route::post('/users-add', [usersController::class, 'users_add']);
+		Route::get('/users-delete/{id}', [usersController::class, 'users_delete']);
+		Route::post('/users-edit/{id}', [usersController::class, 'users_edit']);
+		Route::post('/users-update', [usersController::class, 'users_update']);
 	});
 
 	Route::prefix('reserve')->group(function () {

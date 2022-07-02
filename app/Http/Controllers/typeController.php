@@ -6,7 +6,10 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Models\typesModel;
+use App\Models\menuModel;
+use App\Models\usersModel;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class typeController extends Controller
 {
@@ -19,12 +22,20 @@ class typeController extends Controller
     public function type(Request $request)
     {
         $types = typesModel::all();
+        $menu_add = DB::select('select menu_add from menu where role_name = "'.Auth::user()->lavel.'" and menu_name = "type"'); // สิทการเพิ่มข้อมูล
+        $menu_delete = DB::select('select menu_delete from menu where role_name = "'.Auth::user()->lavel.'" and menu_name = "type"'); // สิทการเพิ่มข้อมูล
+        $menu_edit = DB::select('select menu_edit from menu where role_name = "'.Auth::user()->lavel.'" and menu_name = "type"'); // สิทการเพิ่มข้อมูล
+        $users = DB::select('select status from users where email = "'. Auth::user()->email .'"');
         return view("$this->prefix.$this->folder.type", [
             'prefix' => $this->prefix,
             'folder' => $this->folder,
             'segment' => $this->segment,
             'name_page' => $this->name_page,
             'types' => $types,
+            'menu_add' => $menu_add,
+            'menu_delete' => $menu_delete,
+            'menu_edit' => $menu_edit,
+            'status' => $users,
         ]);
     }
 
