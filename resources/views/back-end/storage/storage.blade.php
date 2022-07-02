@@ -2,7 +2,7 @@
 
 @section('content')
     <div>
-        <div class="row">
+        <div class="row animate__animated animate__flash animate__delay-1s">
             <div class="col-12">
                 <div class="card">
                     <div class="card-header pb-0">
