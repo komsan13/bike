@@ -30,36 +30,46 @@ class storageController extends Controller
         ]);
     }
 
-    // public function save(Request $request)
-    // {
 
-    //     $validatedData = $request->validate([
-    //      'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+    public function storage_add(Request $request)
+    {
+        function invoice_num ($input, $pad_len = 3, $prefix = null) {
+            if ($pad_len <= strlen($input))
+                trigger_error('<strong>$pad_len</strong> cannot be less than or equal to the length of <strong>$input</strong> to generate invoice number', E_USER_ERROR);
 
-    //     ]);
+            if (is_string($prefix))
+                return sprintf("%s%s", $prefix, str_pad($input, $pad_len, "0", STR_PAD_LEFT));
 
-    //     $name = $request->file('image')->getClientOriginalName();
+            return str_pad($input, $pad_len, "0", STR_PAD_LEFT);
+        }
 
-    //     $path = $request->file('image')->store('public/images');
-
-
-    //     $save = new Photo;
-
-    //     $save->name = $name;
-    //     $save->path = $path;
-
-    //     $save->save();
-
-    //     return redirect('upload-image')->with('status', 'Image Has been uploaded');
-
-    // }
-
-
-    public function storage_add(Request $request){
         DB::beginTransaction();
-        $generate_id = date("y").date("m")."-"."001";
+
+        $date = date("y") . date("m");
+        $chk = DB::select('select storages_id from storages where date = "'.$date.'"');
+        $count = count($chk);
+        // $invoice = $date."-".$chk;
+        if ($chk == NULL) {
+            $storages_id = 1;
+        }else{
+            // foreach($chk as $row){
+            $storages_id = $count+1;
+            // }
+        }
+        $parseNum = invoice_num($storages_id);
+        $invoice = $date."-".$parseNum;
+
+        $file = $request->img;
+        $filename = rand(1000, 9999) . date('YmdHi') . $file->getClientOriginalName();
+        $file->move(public_path('public/Image'), $filename);
+
+        $file_transcript = $request->transcript;
+        $filename_transcript = rand(1000, 9999) . date('YmdHi') . $file_transcript->getClientOriginalName();
+        $file_transcript->move(public_path('public/Image'), $filename_transcript);
+        // foreach ($chk as $row) {
+        // $nameImage['image']= $filename;
         $data = new StorageModel();
-        $data->storages_id = $generate_id;
+        $data->storages_id = $storages_id;
         $data->type_id = $request->type_id;
         $data->model_number = $request->model_number;
         $data->tank_number = $request->tank_number;
@@ -72,21 +82,16 @@ class storageController extends Controller
         $data->status = $request->status;
         $data->accessories_id = $request->accessories_id;
         $data->expire_date = $request->expire_date;
-        $data->transcript = $request->transcript;
+        $data->date = $date;
+        $data->invoice = $invoice;
+        $data->img = $filename;
+        $data->transcript = $filename_transcript;
+        // }
         if ($data->save()) {
             DB::commit();
             return redirect()->back()->with('success', 'บันทึกข้อมูลประเภทรถเรียบร้อยแล้ว');
         } else {
             return redirect()->back()->with('error', 'เกิดข้อผิดพลาด !');
         }
-
-
-
-
-        // $file= $request->file('img');
-        // $filename= date('YmdHi').$file->getClientOriginalName();
-        // $file-> move(public_path('/Image'), $filename);
-        // $data['img']= $filename;
-        // dd($request->price());
     }
 }

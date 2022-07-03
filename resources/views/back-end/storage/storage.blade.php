@@ -22,13 +22,13 @@
                                 <div class="modal-header">
                                     <b><i class="fas fa-solid fa-plus text-success"></i> เพิ่มข้อมูล {{ $name_page }}</b>
                                 </div>
-                                <form action="{{url('storage/storage-add')}}" method="POST">
+                                <form action="{{url('storage/storage-add')}}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <div class="modal-body">
                                         <div class="mb-3">
                                             <label for="" class="form-label">ประเภทรถ</label>
                                             <select class="form-select" aria-label="Default select example" name="type_id">
-                                                <option selected>--</option>
+                                                {{-- <option selected>--</option> --}}
                                                 @foreach ($type as $types)
                                                     <option value="{{ $types->id }}">ยี่ห้อ {{ $types->type }} รุ่น
                                                         {{ $types->model }} ปี {{ $types->year }} CC {{ $types->cc }}

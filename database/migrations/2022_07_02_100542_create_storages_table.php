@@ -15,22 +15,24 @@ return new class extends Migration
     {
         Schema::create('storages', function (Blueprint $table) {
             $table->id();
-            $table->integer('storages_id');
-            $table->integer('type_id');
-            $table->string('model_number');
-            $table->string('tank_number');
-            $table->integer('mile');
-            $table->decimal('price',9,2);
-            $table->decimal('down',9,2);
-            $table->decimal('finance',9,2);
-            $table->float('interest');
-            $table->decimal('discount',9,2);
-            $table->string('status');
-            $table->integer('accessories_id');
-            $table->date('expire_date');
-            $table->string('book');
-            $table->string('img');
-            $table->string('transcript');
+            $table->integer('storages_id')->nullable();
+            $table->string('invoice')->nullable();
+            $table->integer('type_id')->nullable();
+            $table->string('model_number')->nullable();
+            $table->string('tank_number')->nullable();
+            $table->integer('mile')->nullable();
+            $table->decimal('price',9,2)->nullable();
+            $table->decimal('down',9,2)->nullable();
+            $table->decimal('finance',9,2)->nullable();
+            $table->float('interest')->nullable();
+            $table->decimal('discount',9,2)->nullable();
+            $table->string('status')->nullable();
+            $table->integer('accessories_id')->nullable();
+            $table->date('expire_date')->nullable();
+            $table->string('book')->nullable();
+            $table->string('img')->nullable();
+            $table->string('transcript')->nullable();
+            $table->string('date');
             $table->timestamps();
         });
     }
