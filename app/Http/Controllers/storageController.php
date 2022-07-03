@@ -57,8 +57,8 @@ class storageController extends Controller
 
     public function storage_add(Request $request){
         DB::beginTransaction();
-        $data = new StorageModel();
         $generate_id = date("y").date("m")."-"."001";
+        $data = new StorageModel();
         $data->storages_id = $generate_id;
         $data->type_id = $request->type_id;
         $data->model_number = $request->model_number;
