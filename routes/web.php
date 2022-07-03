@@ -87,7 +87,7 @@ Route::group(['middleware' => 'auth'], function () {
 
 	Route::prefix('storage')->group(function () {
 		Route::get('/', [storageController::class, 'storage']);
-		Route::get('/storage-add', [storageController::class, 'storage_add']);
+		Route::post('/storage-add', [storageController::class, 'storage_add']);
 	});
 
 	Route::prefix('member')->group(function () {
