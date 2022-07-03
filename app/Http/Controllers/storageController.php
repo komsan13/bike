@@ -27,4 +27,8 @@ class storageController extends Controller
             'type' => typesModel::all(),
         ]);
     }
+
+    public function storage_add(Request $request){
+        dd($request->all());
+    }
 }
