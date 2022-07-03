@@ -23,186 +23,188 @@
                                     <b><i class="fas fa-solid fa-plus text-success"></i> เพิ่มข้อมูล {{ $name_page }}</b>
                                 </div>
                                 <div class="modal-body">
-                                    <div class="mb-3">
-                                        <label for="" class="form-label">ประเภทรถ</label>
-                                        <select class="form-select" aria-label="Default select example">
-                                            <option selected>--</option>
-                                            @foreach ($type as $types)
-                                                <option value="{{ $types->id }}">ยี่ห้อ {{ $types->type }} รุ่น
-                                                    {{ $types->model }} ปี {{ $types->year }} CC {{ $types->cc }}
-                                                    สีรถ
-                                                    {{ $types->color }}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                    <div class="mb-3">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label for="" class="form-label">เลขตัวเครื่อง</label>
-                                                <input type="text" class="form-control" id="">
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label for="" class="form-label">ตัวถัง</label>
-                                                <input type="text" class="form-control" id="">
+                                    <form action="">
+                                        <div class="mb-3">
+                                            <label for="" class="form-label">ประเภทรถ</label>
+                                            <select class="form-select" aria-label="Default select example">
+                                                <option selected>--</option>
+                                                @foreach ($type as $types)
+                                                    <option value="{{ $types->id }}">ยี่ห้อ {{ $types->type }} รุ่น
+                                                        {{ $types->model }} ปี {{ $types->year }} CC {{ $types->cc }}
+                                                        สีรถ
+                                                        {{ $types->color }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label for="" class="form-label">เลขเครื่อง</label>
+                                                    <input type="text" name="model_number" class="form-control" id="">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="" class="form-label">เลขถัง</label>
+                                                    <input type="text" name="tank_number" class="form-control" id="">
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="mb-3">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label for="" class="form-label">เลขไมล์</label>
-                                                <input type="text" class="form-control" id="">
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label for="" class="form-label">ราคาขาย</label>
-                                                <input type="number" class="form-control" id="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="mb-3">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label for="" class="form-label">ราคาดาวน์</label>
-                                                <input type="number" class="form-control" id="">
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label for="" class="form-label">ยอดจัดไฟแนนซ์</label>
-                                                <input type="number" class="form-control" id="">
+                                        <div class="mb-3">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label for="" class="form-label">เลขไมล์</label>
+                                                    <input type="text" class="form-control" id="">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="" class="form-label">ราคาขาย</label>
+                                                    <input type="number" name="price" class="form-control" id="">
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="mb-3">
-                                        <div class="row">
-                                            <div class="col-md-4">
-                                                <label for="" class="form-label">อัตตราดอกเบี้ย</label>
-                                                <input type="number" class="form-control" id="">
-                                            </div>
-                                            <div class="col-md-4">
-                                                <label for="" class="form-label">ส่วนลด</label>
-                                                <input type="number" class="form-control" id="">
-                                            </div>
-                                            <div class="col-md-4">
-                                                <label for="" class="form-label">วันหมดอายุภาษี</label>
-                                                <input type="text" class="form-control" id="">
+                                        <div class="mb-3">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label for="" class="form-label">ราคาดาวน์</label>
+                                                    <input type="number" name="down" class="form-control" id="">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="" class="form-label">ยอดจัดไฟแนนซ์</label>
+                                                    <input type="number" name="finance" class="form-control" id="">
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="mb-2">
+                                        <div class="mb-3">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <label for="" class="form-label">อัตตราดอกเบี้ย</label>
+                                                    <input type="number" name="interest" class="form-control" id="">
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label for="" class="form-label">ส่วนลด</label>
+                                                    <input type="number" name="discount" class="form-control" id="">
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label for="" class="form-label">วันหมดอายุภาษี</label>
+                                                    <input type="text" name="expire_date" class="form-control" id="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-2">
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <label for="" class="form-label">สถานะรถ</label>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio"
+                                                            name="flexRadioDefault" id="flexRadioDefault1">
+                                                        <label class="form-check-label" for="flexRadioDefault1">
+                                                            พร้อมขาย
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio"
+                                                            name="flexRadioDefault" id="flexRadioDefault2" checked>
+                                                        <label class="form-check-label" for="flexRadioDefault2">
+                                                            รอเก็บงาน
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 mt-4">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" value=""
+                                                            id="" checked>
+                                                        <label class="form-check-label" for="">
+                                                            รถมีเล่ม
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" value=""
+                                                            id="">
+                                                        <label class="form-check-label" for="">
+                                                            รถปิดไฟแนนซ์
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr class="horizontal dark mt-0">
+                                        <small>รายการของเดิม (อุปกรณ์ติดรถมา)</small>
                                         <div class="row">
                                             <div class="col-md-3">
-                                                <label for="" class="form-label">สถานะรถ</label>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                        id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1">
-                                                        พร้อมขาย
-                                                    </label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio"
-                                                        name="flexRadioDefault" id="flexRadioDefault2" checked>
-                                                    <label class="form-check-label" for="flexRadioDefault2">
-                                                        รอเก็บงาน
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4 mt-4">
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" value=""
-                                                        id="" checked>
-                                                    <label class="form-check-label" for="">
-                                                        รถมีเล่ม
-                                                    </label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" value=""
+                                                    <input class="form-check-input" type="checkbox" value=""
                                                         id="">
                                                     <label class="form-check-label" for="">
-                                                        รถปิดไฟแนนซ์
+                                                        ท่อเดิม
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                        id="" checked>
+                                                    <label class="form-check-label" for="">
+                                                        ท้ายเดิม
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                        id="">
+                                                    <label class="form-check-label" for="">
+                                                        แฮนด์เดิม
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                        id="" checked>
+                                                    <label class="form-check-label" for="">
+                                                        ชิวเดิม
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                        id="" checked>
+                                                    <label class="form-check-label" for="">
+                                                        กระจกเดิม
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                        id="">
+                                                    <label class="form-check-label" for="">
+                                                        เบาะเดิม
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                        id="" checked>
+                                                    <label class="form-check-label" for="">
+                                                        กุญแจ
                                                     </label>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <hr class="horizontal dark mt-0">
-                                    <small>รายการของเดิม (อุปกรณ์ติดรถมา)</small>
-                                    <div class="row">
-                                        <div class="col-md-3">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value=""
-                                                    id="">
-                                                <label class="form-check-label" for="">
-                                                    ท่อเดิม
-                                                </label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value=""
-                                                    id="" checked>
-                                                <label class="form-check-label" for="">
-                                                    ท้ายเดิม
-                                                </label>
+                                        <div class="mb-2 mt-3">
+                                            <label for="" class="form-label">อื่นๆ</label>
+                                            <input type="text" class="form-control" id="">
+                                        </div>
+                                        <hr class="horizontal dark mt-0 mt-3">
+                                        <small>รูปภาพและเอกสาร</small>
+                                        <div class="mb-2">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label for="" class="form-label">รูปภาพรถ</label>
+                                                    <input type="file" class="form-control" id="">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="" class="form-label">สำเนา</label>
+                                                    <input type="file" class="form-control" id="">
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-3">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value=""
-                                                    id="">
-                                                <label class="form-check-label" for="">
-                                                    แฮนด์เดิม
-                                                </label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value=""
-                                                    id="" checked>
-                                                <label class="form-check-label" for="">
-                                                    ชิวเดิม
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value=""
-                                                    id="" checked>
-                                                <label class="form-check-label" for="">
-                                                    กระจกเดิม
-                                                </label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value=""
-                                                    id="">
-                                                <label class="form-check-label" for="">
-                                                    เบาะเดิม
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value=""
-                                                    id="" checked>
-                                                <label class="form-check-label" for="">
-                                                    กุญแจ
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="mb-2 mt-3">
-                                        <label for="" class="form-label">อื่นๆ</label>
-                                        <input type="text" class="form-control" id="">
-                                    </div>
-                                    <hr class="horizontal dark mt-0 mt-3">
-                                    <small>รูปภาพและเอกสาร</small>
-                                    <div class="mb-2">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label for="" class="form-label">รูปภาพรถ</label>
-                                                <input type="file" class="form-control" id="">
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label for="" class="form-label">สำเนา</label>
-                                                <input type="file" class="form-control" id="">
-                                            </div>
-                                        </div>
-                                    </div>
+                                    </form>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn bg-gradient-secondary" data-bs-dismiss="modal"><i
