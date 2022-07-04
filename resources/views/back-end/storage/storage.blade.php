@@ -1,6 +1,47 @@
 @extends('layouts.user_type.auth')
 
 @section('content')
+    @if (session('success'))
+        <div class="position-absolute bottom-0 end-0 p-3" style="z-index: 11">
+            <div id="liveToast" class="toast hide " role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header alert-success text-white"
+                    style="border-top-left-radius: 10px; border-top-right-radius: 10px;">
+                    <strong class="me-auto"><i class="fa-solid fa-circle-check"></i> Successfully</strong>
+                    {{-- <small>11 mins ago</small> --}}
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body alert-success text-white"
+                    style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
+                    {{ session('success') }}
+                </div>
+            </div>
+        </div>
+        <script>
+            setTimeout(() => {
+                $('.toast').hide('show');
+            }, 10000);
+        </script>
+    @elseif (session('error'))
+        <div class="position-absolute bottom-0 end-0 p-3" style="z-index: 11">
+            <div id="liveToast" class="toast hide " role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header alert-warning text-white"
+                    style="border-top-left-radius: 10px; border-top-right-radius: 10px;">
+                    <strong class="me-auto"><i class="fas fa-exclamation-triangle"></i> Warning</strong>
+                    {{-- <small>11 mins ago</small> --}}
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body alert-warning text-white"
+                    style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
+                    {{ session('error') }}
+                </div>
+            </div>
+        </div>
+        <script>
+            setTimeout(() => {
+                $('.toast').hide('show');
+            }, 10000);
+        </script>
+    @endif
     <div>
         <div class="row">
             <div class="col-12">
@@ -22,7 +63,8 @@
                                 <div class="modal-header">
                                     <b><i class="fas fa-solid fa-plus text-success"></i> เพิ่มข้อมูล {{ $name_page }}</b>
                                 </div>
-                                <form action="{{url('storage/storage-add')}}" method="POST" enctype="multipart/form-data">
+                                <form action="{{ url('storage/storage-add') }}" method="POST"
+                                    enctype="multipart/form-data">
                                     @csrf
                                     <div class="modal-body">
                                         <div class="mb-3">
@@ -348,7 +390,10 @@
                                 <thead class="alert-dark">
                                     <tr>
                                         <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7">
-                                            #
+                                            #id
+                                        </th>
+                                        <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7">
+                                            #invoice
                                         </th>
                                         <th
                                             class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">
@@ -385,54 +430,61 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td class="ps-4">
-                                            <span class="text-xs font-weight-normal mb-0">2</span>
-                                        </td>
-                                        <td class="text-center">
-                                            <div>
-                                                <img src="https://www.greatbiker.com/wp-content/uploads/2020/10/cbr650r.jpg"
-                                                    width="80px">
-                                            </div>
-                                        </td>
-                                        <td class="text-center">
-                                            <span class="text-xs font-weight-normal mb-0">
-                                                Honda</span>
-                                        </td>
-                                        <td class="text-center">
-                                            <span class="text-secondary text-xs font-weight-normal">CB1000R</span>
-                                        </td>
-                                        <td class="text-center">
-                                            <span class="text-secondary text-xs font-weight-normal">2022</span>
-                                        </td>
-                                        <td class="text-center">
-                                            <span class="text-secondary text-xs font-weight-normal">สีดำ</span>
-                                        </td>
-                                        <td class="text-center">
-                                            <span class="text-secondary text-xs font-weight-normal">1,000,000</span>
-                                        </td>
-                                        <td class="text-center">
-                                            <span
-                                                class="text-xs font-weight-normal mb-0 badge rounded-pill bg-success">จองแล้ว</span>
-                                        </td>
-                                        <td class="text-center">
-                                            {{-- <a href="#" class="btn bg-gradient-primary" style="padding: 15px;">
+                                    @php
+                                        $i = 1;
+                                    @endphp
+                                    @foreach ($storages as $row)
+                                        <tr>
+                                            <td class="ps-4">
+                                                <span class="text-xs font-weight-normal mb-0">{{$i++}}</span>
+                                            </td>
+                                            <td class="ps-4">
+                                                <span class="text-xs font-weight-normal mb-0">{{$row->invoice}}</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <div>
+                                                    <img src="{{asset('public/Image/'.$row->img)}}" width="80px">
+                                                </div>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-xs font-weight-normal mb-0">
+                                                    {{$row->type}}</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-secondary text-xs font-weight-normal">{{$row->model}}</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-secondary text-xs font-weight-normal">{{$row->year}}</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-secondary text-xs font-weight-normal">{{$row->color}}</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-secondary text-xs font-weight-normal">{{$row->price }}</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span
+                                                    class="text-xs font-weight-normal mb-0 badge rounded-pill bg-success">จองแล้ว</span>
+                                            </td>
+                                            <td class="text-center">
+                                                {{-- <a href="#" class="btn bg-gradient-primary" style="padding: 15px;">
                                                 <i class="fa-lg fas fa-qrcode text-white" style="font-size: 10px;"></i>
                                             </a> --}}
-                                            <a href="#" class="btn bg-gradient-info " style="padding: 15px;">
-                                                <i class="fa-lg fas fa-list text-white" style="font-size: 10px;"></i>
-                                            </a>
-                                            <a href="#" class="btn bg-gradient-warning " style="padding: 15px;"
-                                                data-bs-toggle="modal" data-bs-target="#updatedata">
-                                                <i class="fa-lg fas fa-edit text-white" style="font-size: 10px;"></i>
-                                            </a>
-                                            <a href="#" class="btn bg-gradient-danger " style="padding: 15px;"
-                                                data-bs-toggle="tooltip" data-bs-original-title="ลบข้อมูล">
-                                                <i class="fa-lg cursor-pointer fas fa-trash text-white"
-                                                    style="font-size: 10px;"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
+                                                <a href="#" class="btn bg-gradient-info " style="padding: 15px;">
+                                                    <i class="fa-lg fas fa-list text-white" style="font-size: 10px;"></i>
+                                                </a>
+                                                <a href="#" class="btn bg-gradient-warning " style="padding: 15px;"
+                                                    data-bs-toggle="modal" data-bs-target="#updatedata">
+                                                    <i class="fa-lg fas fa-edit text-white" style="font-size: 10px;"></i>
+                                                </a>
+                                                <a href="#" class="btn bg-gradient-danger " style="padding: 15px;"
+                                                    data-bs-toggle="tooltip" data-bs-original-title="ลบข้อมูล">
+                                                    <i class="fa-lg cursor-pointer fas fa-trash text-white"
+                                                        style="font-size: 10px;"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
@@ -447,5 +499,9 @@
 <script>
     $(document).ready(function() {
         $('#myTable').DataTable();
+    });
+
+    $(document).ready(function() {
+        $('.toast').toast('show');
     });
 </script>
