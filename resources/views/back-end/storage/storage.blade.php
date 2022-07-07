@@ -87,7 +87,8 @@
                                     <div class="modal-body">
                                         <div class="mb-3">
                                             <label for="" class="form-label">ประเภทรถ</label>
-                                            <select class="form-select form-select-sm" aria-label="Default select example" name="type_id">
+                                            <select class="form-select form-select-sm" aria-label="Default select example"
+                                                name="type_id">
                                                 {{-- <option selected>--</option> --}}
                                                 @foreach ($type as $types)
                                                     <option value="{{ $types->id }}">ยี่ห้อ {{ $types->type }} รุ่น
@@ -101,11 +102,13 @@
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <label for="" class="form-label">เลขเครื่อง</label>
-                                                    <input type="text" name="model_number" class="form-control form-control-sm">
+                                                    <input type="text" name="model_number"
+                                                        class="form-control form-control-sm">
                                                 </div>
                                                 <div class="col-md-6">
                                                     <label for="" class="form-label">เลขถัง</label>
-                                                    <input type="text" name="tank_number" class="form-control form-control-sm">
+                                                    <input type="text" name="tank_number"
+                                                        class="form-control form-control-sm">
                                                 </div>
                                             </div>
                                         </div>
@@ -113,11 +116,13 @@
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <label for="" class="form-label">เลขไมล์</label>
-                                                    <input type="text" class="form-control form-control-sm" name="mile">
+                                                    <input type="text" class="form-control form-control-sm"
+                                                        name="mile">
                                                 </div>
                                                 <div class="col-md-6">
                                                     <label for="" class="form-label">ราคาขาย</label>
-                                                    <input type="number" name="price" class="form-control form-control-sm">
+                                                    <input type="number" name="price"
+                                                        class="form-control form-control-sm">
                                                 </div>
                                             </div>
                                         </div>
@@ -125,11 +130,13 @@
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <label for="" class="form-label">ราคาดาวน์</label>
-                                                    <input type="number" name="down" class="form-control form-control-sm">
+                                                    <input type="number" name="down"
+                                                        class="form-control form-control-sm">
                                                 </div>
                                                 <div class="col-md-6">
                                                     <label for="" class="form-label">ยอดจัดไฟแนนซ์</label>
-                                                    <input type="number" name="finance" class="form-control form-control-sm">
+                                                    <input type="number" name="finance"
+                                                        class="form-control form-control-sm">
                                                 </div>
                                             </div>
                                         </div>
@@ -137,15 +144,18 @@
                                             <div class="row">
                                                 <div class="col-md-4">
                                                     <label for="" class="form-label">อัตตราดอกเบี้ย</label>
-                                                    <input type="number" name="interest" class="form-control form-control-sm">
+                                                    <input type="number" name="interest"
+                                                        class="form-control form-control-sm">
                                                 </div>
                                                 <div class="col-md-4">
                                                     <label for="" class="form-label">ส่วนลด</label>
-                                                    <input type="number" name="discount" class="form-control form-control-sm">
+                                                    <input type="number" name="discount"
+                                                        class="form-control form-control-sm">
                                                 </div>
                                                 <div class="col-md-4">
                                                     <label for="" class="form-label">วันหมดอายุภาษี</label>
-                                                    <input type="text" name="expire_date" class="form-control form-control-sm">
+                                                    <input type="text" name="expire_date"
+                                                        class="form-control form-control-sm">
                                                 </div>
                                             </div>
                                         </div>
@@ -249,7 +259,8 @@
                                         </div>
                                         <div class="mb-2 mt-3">
                                             <label for="" class="form-label">อื่นๆ</label>
-                                            <input type="text" class="form-control form-control-sm" value="อื่นๆ" name="other">
+                                            <input type="text" class="form-control form-control-sm" value="อื่นๆ"
+                                                name="other">
                                         </div>
                                         <hr class="horizontal dark mt-0 mt-3">
                                         <small>รูปภาพและเอกสาร</small>
@@ -257,11 +268,13 @@
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <label for="" class="form-label">รูปภาพรถ</label>
-                                                    <input type="file" name="img" class="form-control form-control-sm">
+                                                    <input type="file" name="img"
+                                                        class="form-control form-control-sm">
                                                 </div>
                                                 <div class="col-md-6">
                                                     <label for="" class="form-label">สำเนา</label>
-                                                    <input type="file" name="transcript" class="form-control form-control-sm">
+                                                    <input type="file" name="transcript"
+                                                        class="form-control form-control-sm">
                                                 </div>
                                             </div>
                                         </div>
@@ -296,8 +309,8 @@
                                     <div class="modal-body">
                                         <div class="mb-3">
                                             <label for="" class="form-label">#invoice</label>
-                                            <input type="text" id="invoice" name="invoice" class="form-control form-control-sm"
-                                                readonly>
+                                            <input type="text" id="invoice" name="invoice"
+                                                class="form-control form-control-sm" readonly>
                                         </div>
                                         <div class="mb-3">
                                             <label for="" class="form-label">ประเภทรถ</label>
@@ -332,8 +345,8 @@
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <label for="" class="form-label">เลขไมล์</label>
-                                                    <input type="text" class="form-control form-control-sm" id="e_mile"
-                                                        name="mile">
+                                                    <input type="text" class="form-control form-control-sm"
+                                                        id="e_mile" name="mile">
                                                 </div>
                                                 <div class="col-md-6">
                                                     <label for="" class="form-label">ราคาขาย</label>
@@ -464,7 +477,8 @@
                                         </div>
                                         <div class="mb-2 mt-3">
                                             <label for="" class="form-label">อื่นๆ</label>
-                                            <input type="text" class="form-control form-control-sm" id="e_other" name="other">
+                                            <input type="text" class="form-control form-control-sm" id="e_other"
+                                                name="other">
                                         </div>
                                         <hr class="horizontal dark mt-0 mt-3">
                                         <small>รูปภาพและเอกสาร</small>
@@ -474,14 +488,16 @@
                                                     <label for="" class="form-label">รูปภาพรถ</label>
                                                     <input type="hidden" id="e_img" name="e_img"
                                                         class="form-control form-control-sm">
-                                                    <input type="file" name="img" class="form-control form-control-sm">
+                                                    <input type="file" name="img"
+                                                        class="form-control form-control-sm">
                                                     <div id="img"></div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <label for="" class="form-label">สำเนา</label>
                                                     <input type="hidden" id="e_transcript" name="e_transcript"
                                                         class="form-control form-control-sm">
-                                                    <input type="file" name="transcript" class="form-control form-control-sm">
+                                                    <input type="file" name="transcript"
+                                                        class="form-control form-control-sm">
                                                     <div id="transcript" class="mt-3"></div>
                                                 </div>
                                             </div>
@@ -500,6 +516,18 @@
                         </div>
                     </div>
 
+
+                    <div class="modal fade" id="modelQr" tabindex="-1" role="dialog"
+                        aria-labelledby="modelQrLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content shadow" style="border-radius: 20px;">
+                                <div class="modal-header">
+
+                                </div>
+                                <div class="modal-body"></div>
+                            </div>
+                        </div>
+                    </div>
 
                     <!-- end model -->
                     <div class="card-body">
@@ -611,7 +639,8 @@
                                                     {{-- <a href="#" class="btn-sm btn bg-gradient-primary" style="padding: 15px;">
                                                 <i class="fa-lg fas fa-qrcode text-white" style="font-size: 10px;"></i>
                                             </a> --}}
-                                                    <a href="#" class="btn-sm btn bg-gradient-info "
+                                                    <a href="#" class="btn-sm btn bg-gradient-info " type="button"
+                                                    data-bs-toggle="modal" data-bs-target="#modelQr"
                                                         style="padding: 15px;">
                                                         <i class="fa-lg fas fa-list fa-fade text-white"
                                                             style="font-size: 10px;"></i>
@@ -642,7 +671,6 @@
             </div>
         </div>
     </div>
-    <option value=""></option>
 @endsection
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
