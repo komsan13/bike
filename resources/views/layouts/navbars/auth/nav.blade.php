@@ -1,5 +1,5 @@
 <!-- Navbar -->
-<nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl position-sticky mt-4 top-1 z-index-sticky shadow blur shadow-blur left-auto" id="navbarBlur" navbar-scroll="true">
+<nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none alert-white  border-radius-xl  position-sticky my-3 top-1 z-index-sticky  blur shadow-blur left-auto" id="navbarBlur" navbar-scroll="true" style="border-radius: 10px;">
     <div class="container-fluid py-1 px-3">
         {{-- <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
             <ol class="breadcrumb mb-1 pb-2 pt-2 px-3 me-sm-6 me-5">
@@ -8,7 +8,7 @@
             </ol>
         </nav> --}}
         <nav aria-label="breadcrumb">
-            <ol class="breadcrumb mb-1 pb-2 pt-2 px-3 me-sm-6 me-5">
+            <ol class="breadcrumb mb-1 pb-2 pt-2 px-3 me-sm-6 me-5 ">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
               <li class="breadcrumb-item active" aria-current="page">{{ str_replace('-', ' ', Request::path()) }}</li>
             </ol>
@@ -32,8 +32,8 @@
         <div class="collapse navbar-collapse d-flex justify-content-end" id="navbar">
             <ul class="navbar-nav  justify-content-end">
                 <li class="nav-item d-flex align-items-center">
-                    <a href="{{ url('/logout')}}" class="nav-link text-body font-weight-bold px-0">
-                        <i class="fa fa-sign-out me-sm-1 icon icon-shape icon-sm shadow border-radius-md bg-white text-danger text-center me-2 d-flex align-items-center justify-content-center"></i>
+                    <a href="{{ url('/logout')}}" class="nav-link text-body alert-dark font-weight-bold btn btn-sm">
+                        <i class="fa-lg fas fa-sign-out-alt fa-fade text-danger" style="font-size: 12px;"></i>&nbsp;&nbsp;  <small class="text-white">ออกจากระบบ</small>
                     </a>
                 </li>
             </ul>

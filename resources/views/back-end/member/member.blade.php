@@ -6,9 +6,9 @@
             <div id="liveToast" class="toast hide " role="alert" aria-live="assertive" aria-atomic="true">
                 <div class="toast-header alert-success text-white"
                     style="border-top-left-radius: 10px; border-top-right-radius: 10px;">
-                    <strong class="me-auto"><i class="fa-solid fa-circle-check"></i> Successfully</strong>
+                    <strong class="me-auto"><i class="fa-solid fa-circle-check fa-fade"></i> Successfully</strong>
                     {{-- <small>11 mins ago</small> --}}
-                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                    <button type="button" class="btn-sm btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
                 </div>
                 <div class="toast-body alert-success text-white"
                     style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
@@ -26,9 +26,9 @@
             <div id="liveToast" class="toast hide " role="alert" aria-live="assertive" aria-atomic="true">
                 <div class="toast-header alert-warning text-white"
                     style="border-top-left-radius: 10px; border-top-right-radius: 10px;">
-                    <strong class="me-auto"><i class="fas fa-exclamation-triangle"></i> Warning</strong>
+                    <strong class="me-auto"><i class="fas fa-exclamation-triangle fa-fade"></i> Warning</strong>
                     {{-- <small>11 mins ago</small> --}}
-                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                    <button type="button" class="btn-sm btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
                 </div>
                 <div class="toast-body alert-warning text-white"
                     style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
@@ -51,19 +51,26 @@
                             <div>
                                 <h5 class="mb-0"><i class="fas fa-align-left"></i> {{ $name_page }}</h5>
                             </div>
-                            @foreach ($status as $role_status)
-                                @if ($role_status->status == 'on')
-                                    @foreach ($menu_add as $menu_adds)
-                                        @if ($menu_adds->menu_add != '' && $menu_adds->menu_add == 'on')
-                                            <a href="#" class="btn bg-gradient-success mb-0" type="button"
-                                                data-bs-toggle="modal" data-bs-target="#insertdata"><i
-                                                    class="fa-solid fa-circle-plus"></i> เพิ่มข้อมูล</a>
-                                        @elseif ($menu_adds->menu_add != '' && $menu_adds->menu_add == 'off')
-                                            {{-- off --}}
-                                        @endif
-                                    @endforeach
-                                @endif
-                            @endforeach
+                            <div style="float: right">
+                                @foreach ($status as $role_status)
+                                    @if ($role_status->status == 'on')
+                                        @foreach ($menu_add as $menu_adds)
+                                            @if ($menu_adds->menu_add != '' && $menu_adds->menu_add == 'on')
+                                                <a href="#" class="btn-sm btn bg-gradient-warning mb-0"
+                                                    type="button"><i class="fa-solid fa-file-export"
+                                                        style="font-size: 11px;"></i>&nbsp; export</a>
+
+                                                <a href="#" class="btn-sm btn bg-gradient-success mb-0" type="button"
+                                                    data-bs-toggle="modal" data-bs-target="#insertdata"><i
+                                                        class="fa-solid fa-circle-plus fa-fade"
+                                                        style="font-size: 11px;"></i>&nbsp; เพิ่มข้อมูล</a>
+                                            @elseif ($menu_adds->menu_add != '' && $menu_adds->menu_add == 'off')
+                                                {{-- off --}}
+                                            @endif
+                                        @endforeach
+                                    @endif
+                                @endforeach
+                            </div>
                         </div>
                     </div>
                     <!-- Modal -->
@@ -80,23 +87,24 @@
                                     <div class="modal-body">
                                         <div class="mb-3">
                                             <label for="" class="form-label">ชื่อ-สกุล</label>
-                                            <input type="text" class="form-control" id="name" name="name">
+                                            <input type="text" class="form-control form-control-sm" id="name" name="name">
                                         </div>
                                         <div class="mb-3">
                                             <label for="" class="form-label">เบอร์โทรศัพท์</label>
-                                            <input type="text" maxlength="10" class="form-control" id="phone"
+                                            <input type="text" maxlength="10" class="form-control form-control-sm" id="phone"
                                                 name="phone">
                                         </div>
                                         <div class="mb-3">
                                             <label for="" class="form-label">เลขประจำตัวประชาชน</label>
-                                            <input type="text" maxlength="13" class="form-control" id="personal"
+                                            <input type="text" maxlength="13" class="form-control form-control-sm" id="personal"
                                                 name="personal">
                                         </div>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn bg-gradient-secondary" data-bs-dismiss="modal"><i
-                                                class="fas fa-window-close"></i> &nbsp;&nbsp;ปิดแท็ป</button>
-                                        <button type="submit" class="btn bg-gradient-success"><i class="fas fa-save"></i>
+                                        <button type="button" class="btn-sm btn bg-gradient-secondary" data-bs-dismiss="modal"><i
+                                                class="fas fa-window-close fa-fade"></i> &nbsp;&nbsp;ปิดแท็ป</button>
+                                        <button type="submit" class="btn-sm btn bg-gradient-success"><i
+                                                class="fas fa-save fa-fade"></i>
                                             &nbsp;&nbsp;บันทึกข้อมูล</button>
                                     </div>
                                 </form>
@@ -105,41 +113,41 @@
                     </div>
                     <!-- end model -->
                     <!-- Modal -->
-                    <div class="modal fade" id="updatedata" tabindex="-1" role="dialog" aria-labelledby="updatedataLabel"
-                        aria-hidden="true">
+                    <div class="modal fade" id="updatedata" tabindex="-1" role="dialog"
+                        aria-labelledby="updatedataLabel" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered" role="document">
                             <div class="modal-content shadow" style="border-radius: 20px;">
                                 <div class="modal-header">
-                                    <b class="mt-3"><i class="fas fa-edit text-warning"></i> แก้ไขข้อมูล
+                                    <b class="mt-3"><i class="fas fa-edit fa-fade text-warning"></i> แก้ไขข้อมูล
                                         {{ $name_page }}</b>
                                 </div>
                                 <form action="{{ url('member/member-update') }}" method="POST">
                                     @csrf
                                     <div class="modal-body">
                                         <div class="mb-3">
-                                            <input type="hidden" class="form-control" id="edit_id" name="id">
+                                            <input type="hidden" class="form-control form-control-sm" id="edit_id" name="id">
                                         </div>
                                         <div class="mb-3">
                                             <label for="" class="form-label">ชื่อ-สกุล</label>
-                                            <input type="text" class="form-control" id="edit_name" name="name">
+                                            <input type="text" class="form-control form-control-sm" id="edit_name" name="name">
                                         </div>
                                         <div class="mb-3">
                                             <label for="" class="form-label">เบอร์โทรศัพท์</label>
-                                            <input type="text" maxlength="10" class="form-control" id="edit_phone"
+                                            <input type="text" maxlength="10" class="form-control form-control-sm" id="edit_phone"
                                                 name="phone">
                                         </div>
                                         <div class="mb-3">
                                             <label for="" class="form-label">เลขประจำตัวประชาชน</label>
-                                            <input type="text" maxlength="13" class="form-control" id="edit_personal"
+                                            <input type="text" maxlength="13" class="form-control form-control-sm" id="edit_personal"
                                                 name="personal">
                                         </div>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn bg-gradient-secondary"
-                                            data-bs-dismiss="modal"><i class="fas fa-window-close"></i>
+                                        <button type="button" class="btn-sm btn bg-gradient-secondary"
+                                            data-bs-dismiss="modal"><i class="fas fa-window-close fa-fade"></i>
                                             &nbsp;&nbsp;ปิดแท็ป</button>
-                                        <button type="submit" class="btn bg-gradient-success"><i
-                                                class="fas fa-save"></i>
+                                        <button type="submit" class="btn-sm btn bg-gradient-success"><i
+                                                class="fas fa-save fa-fade"></i>
                                             &nbsp;&nbsp;อัพเดท
                                             ข้อมูล</button>
                                     </div>
@@ -150,7 +158,7 @@
                     <!-- end model -->
                     <div class="card-body">
                         <div class="table-responsive p-0">
-                            <table id="myTable" class="table align-items-center mb-0">
+                            <table id="myTable" class="table table-hover align-items-center mb-0">
                                 <thead class="alert-dark">
                                     <tr>
                                         <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7">
@@ -211,9 +219,9 @@
                                                             @if ($menu_edits->menu_edit != '' && $menu_edits->menu_edit == 'on')
                                                                 <a href="#"
                                                                     onclick="get_data('{{ $row->id }}')"
-                                                                    style="padding: 15px;" class="btn bg-gradient-warning"
+                                                                    style="padding: 15px;" class="btn-sm btn bg-gradient-warning"
                                                                     data-bs-toggle="modal" data-bs-target="#updatedata">
-                                                                    <i class="fa-lg fas fa-edit text-white"
+                                                                    <i class="fa-lg fas fa-edit fa-fade text-white"
                                                                         style="font-size: 10px;"></i>
                                                                 </a>
                                                             @elseif ($menu_edits->menu_edit != '' && $menu_edits->menu_edit == 'off')
@@ -229,10 +237,10 @@
                                                                 <a href="{{ url('member/member-delete/' . $row->id) }}"
                                                                     style="padding: 15px;"
                                                                     onclick="return confirm('ต้องการลบข้อมูลหรือไม !')"
-                                                                    class="btn bg-gradient-danger"
+                                                                    class="btn-sm btn bg-gradient-danger"
                                                                     data-bs-toggle="tooltip"
                                                                     data-bs-original-title="ลบข้อมูล">
-                                                                    <i class="fa-lg cursor-pointer fas fa-trash text-white"
+                                                                    <i class="fa-lg cursor-pointer fas fa-trash fa-fade text-white"
                                                                         style="font-size: 10px;"></i>
                                                                 </a>
                                                             @elseif ($menu_deletes->menu_delete != '' && $menu_deletes->menu_delete == 'off')

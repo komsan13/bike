@@ -27,8 +27,8 @@ return new class extends Migration
             $table->float('interest')->nullable();
             $table->decimal('discount',9,2)->nullable();
             $table->string('status')->nullable();
-            $table->integer('accessories_id')->nullable();
-            $table->date('expire_date')->nullable();
+            // $table->integer('accessories_id')->nullable();
+            $table->string('expire_date')->nullable();
             $table->string('book')->nullable();
             $table->string('img')->nullable();
             $table->string('transcript')->nullable();

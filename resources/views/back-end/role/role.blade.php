@@ -6,9 +6,9 @@
             <div id="liveToast" class="toast hide " role="alert" aria-live="assertive" aria-atomic="true">
                 <div class="toast-header alert-success text-white"
                     style="border-top-left-radius: 10px; border-top-right-radius: 10px;">
-                    <strong class="me-auto"><i class="fa-solid fa-circle-check"></i> Successfully</strong>
+                    <strong class="me-auto"><i class="fa-solid fa-circle-plus fa-fade"></i> Successfully</strong>
                     {{-- <small>11 mins ago</small> --}}
-                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                    <button type="button" class="btn-sm btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
                 </div>
                 <div class="toast-body alert-success text-white"
                     style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
@@ -26,9 +26,9 @@
             <div id="liveToast" class="toast hide " role="alert" aria-live="assertive" aria-atomic="true">
                 <div class="toast-header alert-warning text-white"
                     style="border-top-left-radius: 10px; border-top-right-radius: 10px;">
-                    <strong class="me-auto"><i class="fas fa-exclamation-triangle"></i> Warning</strong>
+                    <strong class="me-auto"><i class="fas fa-exclamation-triangle fa-fade"></i> Warning</strong>
                     {{-- <small>11 mins ago</small> --}}
-                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                    <button type="button" class="btn-sm btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
                 </div>
                 <div class="toast-body alert-warning text-white"
                     style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
@@ -51,17 +51,27 @@
                             <div>
                                 <h5 class="mb-0"><i class="fas fa-align-left"></i> {{ $name_page }}</h5>
                             </div>
-                            @foreach ($status as $role_status)
-                                @if ($role_status->status == 'on')
-                                    @foreach ($menu_add as $menu_adds)
-                                        @if ($menu_adds->menu_add != '' && $menu_adds->menu_add == 'on')
-                                        <a href="#" class="btn bg-gradient-success mb-0" type="button" data-bs-toggle="modal" data-bs-target="#insertdata">+&nbsp; เพิ่มข้อมูล</a>
-                                        @elseif ($menu_adds->menu_add != '' && $menu_adds->menu_add == 'off')
-                                            {{-- off --}}
-                                        @endif
-                                    @endforeach
-                                @endif
-                            @endforeach
+
+                            <div style="float: right">
+                                @foreach ($status as $role_status)
+                                    @if ($role_status->status == 'on')
+                                        @foreach ($menu_add as $menu_adds)
+                                            @if ($menu_adds->menu_add != '' && $menu_adds->menu_add == 'on')
+                                                <a href="#" class="btn btn-sm bg-gradient-warning mb-0"
+                                                    type="button"><i class="fa-solid fa-file-export"
+                                                        style="font-size: 11px;"></i>&nbsp; export</a>
+
+                                                <a href="#" class="btn btn-sm bg-gradient-success mb-0" type="button"
+                                                    data-bs-toggle="modal" data-bs-target="#insertdata"><i
+                                                        class="fa-solid fa-circle-plus fa-fade"
+                                                        style="font-size: 11px;"></i>&nbsp; เพิ่มข้อมูล</a>
+                                            @elseif ($menu_adds->menu_add != '' && $menu_adds->menu_add == 'off')
+                                                {{-- off --}}
+                                            @endif
+                                        @endforeach
+                                    @endif
+                                @endforeach
+                            </div>
                         </div>
                     </div>
                     <!-- Modal -->
@@ -70,7 +80,7 @@
                         <div class="modal-dialog modal-dialog-centered" role="document">
                             <div class="modal-content shadow" style="border-radius: 20px;">
                                 <div class="modal-header">
-                                    <b class="mt-3"><i class="fas fa-solid fa-plus text-success"></i> เพิ่มข้อมูล
+                                    <b class="mt-3"><i class="fas fa-solid fa-fade fa-plus text-success"></i> เพิ่มข้อมูล
                                         {{ $name_page }}</b>
                                 </div>
                                 <form action="{{ url('role/role-add') }}" method="POST">
@@ -78,28 +88,30 @@
                                     <div class="modal-body">
                                         <div class="mb-3">
                                             <label for="" class="form-label">ชื่อหน้าที่</label>
-                                            <input type="text" class="form-control" name="role_name"
+                                            <input type="text" class="form-control form-control-sm" name="role_name"
                                                 placeholder="ชื่อหน้าที่">
                                         </div>
                                         <div class="form-check">
                                             <input class="form-check-input" type="radio" name="status" id="status1"
                                                 value="on">
                                             <label class="form-check-label" for="status1">
-                                                สถานะการใช้งาน <b class="text-success">(เปิดการใช้งาน)</b>
+                                                สถานะการใช้งาน <b class="text-xs text-success">(เปิดการใช้งาน)</b>
                                             </label>
                                         </div>
                                         <div class="form-check">
                                             <input class="form-check-input" type="radio" name="status" id="status2"
                                                 value="off">
                                             <label class="form-check-label" for="status2">
-                                                สถานะการใช้งาน <b class="text-danger">(ปิดการใช้งาน)</b>
+                                                สถานะการใช้งาน <b class="text-xs text-danger">(ปิดการใช้งาน)</b>
                                             </label>
                                         </div>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn bg-gradient-secondary" data-bs-dismiss="modal"><i
-                                                class="fas fa-window-close"></i> &nbsp;&nbsp;ปิดแท็ป</button>
-                                        <button type="submit" class="btn bg-gradient-success"><i class="fas fa-save"></i>
+                                        <button type="button" class="btn-sm btn bg-gradient-secondary"
+                                            data-bs-dismiss="modal"><i class="fas fa-window-close fa-fade"
+                                                style="font-size: 11px;"></i> &nbsp;&nbsp;ปิดแท็ป</button>
+                                        <button type="submit" class="btn-sm btn bg-gradient-success"><i
+                                                class="fas fa-save fa-fade" style="font-size: 11px;"></i>
                                             &nbsp;&nbsp;บันทึกข้อมูล</button>
                                     </div>
                                 </form>
@@ -112,7 +124,7 @@
                         <div class="modal-dialog modal-dialog-centered" role="document">
                             <div class="modal-content shadow" style="border-radius: 20px;">
                                 <div class="modal-header">
-                                    <b class="mt-3"><i class="fas fa-solid fa-plus text-success"></i>
+                                    <b class="mt-3"><i class="fas fa-solid fa-plus fa-fade text-success"></i>
                                         เพิ่มข้อมูลการใช้งานเมนู
                                 </div>
                                 <form action="{{ url('role/menu-add') }}" method="POST">
@@ -122,13 +134,14 @@
                                             <div class="col-md-6">
                                                 <div class="mb-3">
                                                     <label for="" class="form-label">ชื่อหน้าที่</label>
-                                                    <input type="text" class="form-control" id="menuRole_name"
-                                                        name="role_name" readonly placeholder="ชื่อหน้าที่">
+                                                    <input type="text" class="form-control form-control-sm"
+                                                        id="menuRole_name" name="role_name" readonly
+                                                        placeholder="ชื่อหน้าที่">
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <label for="" class="form-label">ชื่อเมนู</label>
-                                                <select class="form-select" name="menu_name"
+                                                <select class="form-select form-select-sm" name="menu_name"
                                                     aria-label="Default select example">
                                                     <option selected>--</option>
                                                     <option value="type">ประเภทรถ</option>
@@ -203,11 +216,12 @@
                                         </div>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn bg-gradient-secondary"
-                                            data-bs-dismiss="modal"><i class="fas fa-window-close"></i>
+                                        <button type="button" class="btn-sm btn bg-gradient-secondary"
+                                            data-bs-dismiss="modal"><i class="fas fa-window-close fa-fade"
+                                                style="font-size: 11px;"></i>
                                             &nbsp;&nbsp;ปิดแท็ป</button>
-                                        <button type="submit" class="btn bg-gradient-success"><i
-                                                class="fas fa-save"></i>
+                                        <button type="submit" class="btn-sm btn bg-gradient-success"><i
+                                                class="fas fa-save fa-fade" style="font-size: 11px;"></i>
                                             &nbsp;&nbsp;บันทึกข้อมูล</button>
                                     </div>
                                 </form>
@@ -224,22 +238,24 @@
                                     <b class="mt-3"><i class="fas fa-edit text-warning"></i> แก้ไขข้อมูล
                                         {{ $name_page }}</b>
                                 </div>
-                                <form action="{{url('role/role-update')}}" method="POST">
+                                <form action="{{ url('role/role-update') }}" method="POST">
                                     @csrf
                                     <div class="modal-body">
                                         <div class="mb-3">
                                             <label for="" class="form-label">ชื่อหน้าที่</label>
-                                            <input type="hidden" class="form-control" id="role_ids" name="id"
-                                                placeholder="admin">
-                                            <input type="text" class="form-control" id="edit_role_name" name="role_name"
-                                                placeholder="admin">
+                                            <input type="hidden" class="form-control form-control-sm" id="role_ids"
+                                                name="id" placeholder="admin">
+                                            <input type="text" class="form-control form-control-sm"
+                                                id="edit_role_name" name="role_name" placeholder="admin">
                                         </div>
                                         <div id="statusCk"></div>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn bg-gradient-secondary" data-bs-dismiss="modal"><i
-                                                class="fas fa-window-close"></i> &nbsp;&nbsp;ปิดแท็ป</button>
-                                        <button type="submit" class="btn bg-gradient-success"><i class="fas fa-save"></i>
+                                        <button type="button" class="btn-sm btn bg-gradient-secondary"
+                                            data-bs-dismiss="modal"><i class="fas fa-window-close fa-fade"
+                                                style="font-size: 11px;"></i> &nbsp;&nbsp;ปิดแท็ป</button>
+                                        <button type="submit" class="btn-sm btn bg-gradient-success"><i
+                                                class="fas fa-save fa-fade" style="font-size: 11px;"></i>
                                             &nbsp;&nbsp;อัพเดท
                                             ข้อมูล</button>
                                     </div>
@@ -257,7 +273,7 @@
                                     <b class="mt-3"><i class="fas fa-edit text-warning"></i> แก้ไขข้อมูล
                                         {{ $name_page }}</b>
                                 </div>
-                                <form action="{{url('role/menu-update')}}" method="POST">
+                                <form action="{{ url('role/menu-update') }}" method="POST">
                                     @csrf
                                     <div class="modal-body">
                                         <input type="hidden" id="menuIds" name="id">
@@ -267,9 +283,11 @@
                                         <div id="menu_reportCk"></div>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn bg-gradient-secondary" data-bs-dismiss="modal"><i
-                                                class="fas fa-window-close"></i> &nbsp;&nbsp;ปิดแท็ป</button>
-                                        <button type="submit" class="btn bg-gradient-success"><i class="fas fa-save"></i>
+                                        <button type="button" class="btn-sm btn bg-gradient-secondary"
+                                            data-bs-dismiss="modal"><i class="fas fa-window-close fa-fade"
+                                                style="font-size: 11px;"></i> &nbsp;&nbsp;ปิดแท็ป</button>
+                                        <button type="submit" class="btn-sm btn bg-gradient-success"><i
+                                                class="fas fa-save fa-fade" style="font-size: 11px;"></i>
                                             &nbsp;&nbsp;อัพเดท
                                             ข้อมูล</button>
                                     </div>
@@ -336,11 +354,14 @@
                                                     @if ($role_status->status == 'on')
                                                         @foreach ($menu_add as $menu_adds)
                                                             @if ($menu_adds->menu_add != '' && $menu_adds->menu_add == 'on')
-                                                            <a href="#" class="btn bg-gradient-info" data-bs-toggle="modal"
-                                                                onclick="get_data('{{ $row->id }}')" style="padding: 15px;"
-                                                                data-bs-target="#insertmenudata">
-                                                                <i class="fa-lg fas fa-plus text-white" style="font-size: 10px;"></i>
-                                                            </a>
+                                                                <a href="#" class="btn-sm btn bg-gradient-info"
+                                                                    data-bs-toggle="modal"
+                                                                    onclick="get_data('{{ $row->id }}')"
+                                                                    style="padding: 15px;"
+                                                                    data-bs-target="#insertmenudata">
+                                                                    <i class="fa-lg fas fa-plus fa-fade text-white"
+                                                                        style="font-size: 10px;"></i>
+                                                                </a>
                                                             @elseif ($menu_adds->menu_add != '' && $menu_adds->menu_add == 'off')
                                                                 {{-- off --}}
                                                             @endif
@@ -352,11 +373,13 @@
                                                     @if ($role_status->status == 'on')
                                                         @foreach ($menu_edit as $menu_edits)
                                                             @if ($menu_edits->menu_edit != '' && $menu_edits->menu_edit == 'on')
-                                                            <a href="#" class="btn bg-gradient-warning" data-bs-toggle="modal"
-                                                                onclick="get_data_edit('{{ $row->id }}','{{ $row->role_name }}')"
-                                                                style="padding: 15px;" data-bs-target="#updatedata">
-                                                                <i class="fa-lg fas fa-edit text-white" style="font-size: 10px;"></i>
-                                                            </a>
+                                                                <a href="#" class="btn-sm btn bg-gradient-warning"
+                                                                    data-bs-toggle="modal"
+                                                                    onclick="get_data_edit('{{ $row->id }}','{{ $row->role_name }}')"
+                                                                    style="padding: 15px;" data-bs-target="#updatedata">
+                                                                    <i class="fa-lg fas fa-edit fa-fade text-white"
+                                                                        style="font-size: 10px;"></i>
+                                                                </a>
                                                             @elseif ($menu_edit->menu_edit != '' && $menu_edit->menu_edit == 'off')
                                                                 {{-- off --}}
                                                             @endif
@@ -368,13 +391,14 @@
                                                     @if ($role_status->status == 'on')
                                                         @foreach ($menu_delete as $menu_deletes)
                                                             @if ($menu_deletes->menu_delete != '' && $menu_deletes->menu_delete == 'on')
-                                                            <a href="{{ url('role/role-delete/' . $row->id) }}"
-                                                                onclick="return confirm('ต้องการลบข้อมูลหรือไม่ !')"
-                                                                class="btn bg-gradient-danger" data-bs-toggle="tooltip"
-                                                                style="padding: 15px;" data-bs-original-title="ลบข้อมูล">
-                                                                <i class="fa-lg cursor-pointer fas fa-trash text-white"
-                                                                    style="font-size: 10px;"></i>
-                                                            </a>
+                                                                <a href="{{ url('role/role-delete/' . $row->id) }}"
+                                                                    onclick="return confirm('ต้องการลบข้อมูลหรือไม่ !')"
+                                                                    class="btn-sm btn bg-gradient-danger"
+                                                                    data-bs-toggle="tooltip" style="padding: 15px;"
+                                                                    data-bs-original-title="ลบข้อมูล">
+                                                                    <i class="fa-lg cursor-pointer fas fa-trash fa-fade text-white"
+                                                                        style="font-size: 10px;"></i>
+                                                                </a>
                                                             @elseif ($menu_delete->menu_delete != '' && $menu_delete->menu_delete == 'off')
                                                                 {{-- off --}}
                                                             @endif
@@ -386,11 +410,14 @@
                                                     @if ($role_status->status == 'on')
                                                         @foreach ($menu_edit as $menu_edits)
                                                             @if ($menu_edits->menu_edit != '' && $menu_edits->menu_edit == 'on')
-                                                            <a class="btn bg-gradient-warning" style="padding: 15px;"
-                                                                data-bs-toggle="collapse" href="#collapseExample{{$i}}" role="button"
-                                                                aria-expanded="false" aria-controls="collapseExample">
-                                                                <i class="fa-lg fas fa-solid fa-address-card text-white" style="font-size: 10px;"></i>
-                                                            </a>
+                                                                <a class="btn-sm btn bg-gradient-warning"
+                                                                    style="padding: 15px;" data-bs-toggle="collapse"
+                                                                    href="#collapseExample{{ $i }}"
+                                                                    role="button" aria-expanded="false"
+                                                                    aria-controls="collapseExample">
+                                                                    <i class="fa-lg fas fa-solid fa-address-card fa-fade text-white"
+                                                                        style="font-size: 10px;"></i>
+                                                                </a>
                                                             @elseif ($menu_edit->menu_edit != '' && $menu_edit->menu_edit == 'off')
                                                                 {{-- off --}}
                                                             @endif
@@ -398,7 +425,7 @@
                                                     @endif
                                                 @endforeach
 
-                                                <div class="collapse" id="collapseExample{{$i}}">
+                                                <div class="collapse" id="collapseExample{{ $i }}">
                                                     <div class="mt-2">
                                                         @php
                                                             $servername = 'localhost';
@@ -444,16 +471,30 @@
                                                             <tbody>
                                                                 @foreach ($result as $results)
                                                                     <tr>
-                                                                        <td><small class="text-xs">{{ $results['menu_name'] }}</small></td>
-                                                                        <td><small class="text-xs">{{ $results['menu_add'] }}</small></td>
-                                                                        <td><small class="text-xs">{{ $results['menu_delete'] }}</small></td>
-                                                                        <td><small class="text-xs">{{ $results['menu_edit'] }}</small></td>
-                                                                        <td><small class="text-xs">{{ $results['menu_report'] }}</small></td>
+                                                                        <td><small
+                                                                                class="text-xs">{{ $results['menu_name'] }}</small>
+                                                                        </td>
+                                                                        <td><small
+                                                                                class="text-xs">{{ $results['menu_add'] }}</small>
+                                                                        </td>
+                                                                        <td><small
+                                                                                class="text-xs">{{ $results['menu_delete'] }}</small>
+                                                                        </td>
+                                                                        <td><small
+                                                                                class="text-xs">{{ $results['menu_edit'] }}</small>
+                                                                        </td>
+                                                                        <td><small
+                                                                                class="text-xs">{{ $results['menu_report'] }}</small>
+                                                                        </td>
                                                                         <td>
-                                                                            <a href="#" class="btn bg-gradient-warning" data-bs-toggle="modal"
+                                                                            <a href="#"
+                                                                                class="btn-sm btn bg-gradient-warning"
+                                                                                data-bs-toggle="modal"
                                                                                 onclick="menu_data('{{ $results['id'] }}')"
-                                                                                style="padding: 15px;" data-bs-target="#menudatas">
-                                                                                <i class="fa-lg fas fa-edit text-white" style="font-size: 10px;"></i>
+                                                                                style="padding: 10px;"
+                                                                                data-bs-target="#menudatas">
+                                                                                <i class="fa-lg fas fa-edit text-white fa-fade"
+                                                                                    style="font-size: 7px;"></i>
                                                                             </a>
                                                                         </td>
                                                                     </tr>
@@ -508,39 +549,47 @@
                 for (var i = 0; i < res.length; i++) {
                     document.getElementById("menuIds").value = res[i].id;
 
-                    var add_on = '<div class="form-check mt-3"><input class="form-check-input" type="radio" name="menu_add" checked value="on"><label class="form-check-label">อนุญาติให้เพิ่มข้อมูล</label></div><div class="form-check"><input class="form-check-input" type="radio" name="menu_add" value="off"><label class="form-check-label">ไม่อนุญาติให้เพิ่มข้อมูล</label></div>';
-                    var add_off = '<div class="form-check mt-3"><input class="form-check-input" type="radio" name="menu_add" value="on"><label class="form-check-label">อนุญาติให้เพิ่มข้อมูล</label></div><div class="form-check"><input class="form-check-input" type="radio" name="menu_add" checked value="off"><label class="form-check-label">ไม่อนุญาติให้เพิ่มข้อมูล</label></div>';
+                    var add_on =
+                        '<div class="form-check mt-3"><input class="form-check-input" type="radio" name="menu_add" checked value="on"><label class="form-check-label">อนุญาติให้เพิ่มข้อมูล</label></div><div class="form-check"><input class="form-check-input" type="radio" name="menu_add" value="off"><label class="form-check-label">ไม่อนุญาติให้เพิ่มข้อมูล</label></div>';
+                    var add_off =
+                        '<div class="form-check mt-3"><input class="form-check-input" type="radio" name="menu_add" value="on"><label class="form-check-label">อนุญาติให้เพิ่มข้อมูล</label></div><div class="form-check"><input class="form-check-input" type="radio" name="menu_add" checked value="off"><label class="form-check-label">ไม่อนุญาติให้เพิ่มข้อมูล</label></div>';
 
-                    var delete_on = '<div class="form-check mt-3"><input class="form-check-input" type="radio" name="menu_delete" checked value="on"><label class="form-check-label">อนุญาติให้ลบข้อมูล</label></div><div class="form-check"><input class="form-check-input" type="radio" name="menu_delete" value="off"><label class="form-check-label">ไม่อนุญาติให้ลบข้อมูล</label></div>';
-                    var delete_off = '<div class="form-check mt-3"><input class="form-check-input" type="radio" name="menu_delete" value="on"><label class="form-check-label">อนุญาติให้ลบข้อมูล</label></div><div class="form-check"><input class="form-check-input" type="radio" name="menu_delete" checked value="off"><label class="form-check-label">ไม่อนุญาติให้ลบข้อมูล</label></div>';
+                    var delete_on =
+                        '<div class="form-check mt-3"><input class="form-check-input" type="radio" name="menu_delete" checked value="on"><label class="form-check-label">อนุญาติให้ลบข้อมูล</label></div><div class="form-check"><input class="form-check-input" type="radio" name="menu_delete" value="off"><label class="form-check-label">ไม่อนุญาติให้ลบข้อมูล</label></div>';
+                    var delete_off =
+                        '<div class="form-check mt-3"><input class="form-check-input" type="radio" name="menu_delete" value="on"><label class="form-check-label">อนุญาติให้ลบข้อมูล</label></div><div class="form-check"><input class="form-check-input" type="radio" name="menu_delete" checked value="off"><label class="form-check-label">ไม่อนุญาติให้ลบข้อมูล</label></div>';
 
-                    var edit_on = '<div class="form-check mt-3"><input class="form-check-input" type="radio" name="menu_edit" checked value="on"><label class="form-check-label">อนุญาติให้แก้ไขข้อมูล</label></div><div class="form-check"><input class="form-check-input" type="radio" name="menu_edit" value="off"><label class="form-check-label">ไม่อนุญาติให้แก้ไขข้อมูล</label></div>';
-                    var edit_off = '<div class="form-check mt-3"><input class="form-check-input" type="radio" name="menu_edit" value="on"><label class="form-check-label">อนุญาติให้แก้ไขข้อมูล</label></div><div class="form-check"><input class="form-check-input" type="radio" name="menu_edit" checked value="off"><label class="form-check-label">ไม่อนุญาติให้แก้ไขข้อมูล</label></div>';
+                    var edit_on =
+                        '<div class="form-check mt-3"><input class="form-check-input" type="radio" name="menu_edit" checked value="on"><label class="form-check-label">อนุญาติให้แก้ไขข้อมูล</label></div><div class="form-check"><input class="form-check-input" type="radio" name="menu_edit" value="off"><label class="form-check-label">ไม่อนุญาติให้แก้ไขข้อมูล</label></div>';
+                    var edit_off =
+                        '<div class="form-check mt-3"><input class="form-check-input" type="radio" name="menu_edit" value="on"><label class="form-check-label">อนุญาติให้แก้ไขข้อมูล</label></div><div class="form-check"><input class="form-check-input" type="radio" name="menu_edit" checked value="off"><label class="form-check-label">ไม่อนุญาติให้แก้ไขข้อมูล</label></div>';
 
-                    var report_on = '<div class="form-check mt-3"><input class="form-check-input" type="radio" name="menu_report" checked value="on"><label class="form-check-label">อนุญาติให้ report ข้อมูล</label></div><div class="form-check"><input class="form-check-input" type="radio" name="menu_report" value="off"><label class="form-check-label">ไม่อนุญาติให้ report ข้อมูล</label></div>';
-                    var report_off = '<div class="form-check mt-3"><input class="form-check-input" type="radio" name="menu_report" value="on"><label class="form-check-label">อนุญาติให้ report ข้อมูล</label></div><div class="form-check"><input class="form-check-input" type="radio" name="menu_report" checked value="off"><label class="form-check-label">ไม่อนุญาติให้ report ข้อมูล</label></div>';
+                    var report_on =
+                        '<div class="form-check mt-3"><input class="form-check-input" type="radio" name="menu_report" checked value="on"><label class="form-check-label">อนุญาติให้ report ข้อมูล</label></div><div class="form-check"><input class="form-check-input" type="radio" name="menu_report" value="off"><label class="form-check-label">ไม่อนุญาติให้ report ข้อมูล</label></div>';
+                    var report_off =
+                        '<div class="form-check mt-3"><input class="form-check-input" type="radio" name="menu_report" value="on"><label class="form-check-label">อนุญาติให้ report ข้อมูล</label></div><div class="form-check"><input class="form-check-input" type="radio" name="menu_report" checked value="off"><label class="form-check-label">ไม่อนุญาติให้ report ข้อมูล</label></div>';
 
-                    if(res[i].menu_add == 'on' && res[i].menu_add != ''){
+                    if (res[i].menu_add == 'on' && res[i].menu_add != '') {
                         document.getElementById("menu_addCk").innerHTML = add_on;
-                    }else if(res[i].menu_add == 'off' && res[i].menu_add != ''){
+                    } else if (res[i].menu_add == 'off' && res[i].menu_add != '') {
                         document.getElementById("menu_addCk").innerHTML = add_off;
                     }
 
-                    if(res[i].menu_delete == 'on' && res[i].menu_delete != ''){
+                    if (res[i].menu_delete == 'on' && res[i].menu_delete != '') {
                         document.getElementById("menu_deleteCk").innerHTML = delete_on;
-                    }else if(res[i].menu_delete == 'off' && res[i].menu_delete != ''){
+                    } else if (res[i].menu_delete == 'off' && res[i].menu_delete != '') {
                         document.getElementById("menu_deleteCk").innerHTML = delete_off;
                     }
 
-                    if(res[i].menu_edit == 'on' && res[i].menu_edit != ''){
+                    if (res[i].menu_edit == 'on' && res[i].menu_edit != '') {
                         document.getElementById("menu_editCk").innerHTML = edit_on;
-                    }else if(res[i].menu_edit == 'off' && res[i].menu_edit != ''){
+                    } else if (res[i].menu_edit == 'off' && res[i].menu_edit != '') {
                         document.getElementById("menu_editCk").innerHTML = edit_off;
                     }
 
-                    if(res[i].menu_report == 'on' && res[i].menu_report != ''){
+                    if (res[i].menu_report == 'on' && res[i].menu_report != '') {
                         document.getElementById("menu_reportCk").innerHTML = report_on;
-                    }else if(res[i].menu_report == 'off' && res[i].menu_report != ''){
+                    } else if (res[i].menu_report == 'off' && res[i].menu_report != '') {
                         document.getElementById("menu_reportCk").innerHTML = report_off;
                     }
                 }
@@ -563,12 +612,14 @@
 
                 var status = res.status;
                 for (var i = 0; i < status.length; i++) {
-                    var html_on = '<div class="form-check"><input class="form-check-input" type="radio" name="status" id="status1" checked value="on"><label class="form-check-label" for="status1">สถานะการใช้งาน <b class="text-success">(เปิดการใช้งาน)</b></label></div><div class="form-check"><input class="form-check-input" type="radio" name="status" id="status2" value="off"><label class="form-check-label" for="status2">สถานะการใช้งาน <b class="text-danger">(ปิดการใช้งาน)</b></label></div>';
-                    var html_off = '<div class="form-check"><input class="form-check-input" type="radio" name="status" id="status1" value="on"><label class="form-check-label" for="status1">สถานะการใช้งาน <b class="text-success">(เปิดการใช้งาน)</b></label></div><div class="form-check"><input class="form-check-input" type="radio" name="status" id="status2" checked value="off"><label class="form-check-label" for="status2">สถานะการใช้งาน <b class="text-danger">(ปิดการใช้งาน)</b></label></div>';
+                    var html_on =
+                        '<div class="form-check"><input class="form-check-input" type="radio" name="status" id="status1" checked value="on"><label class="form-check-label" for="status1">สถานะการใช้งาน <b class="text-xs text-success">(เปิดการใช้งาน)</b></label></div><div class="form-check"><input class="form-check-input" type="radio" name="status" id="status2" value="off"><label class="form-check-label" for="status2">สถานะการใช้งาน <b class="text-xs text-danger">(ปิดการใช้งาน)</b></label></div>';
+                    var html_off =
+                        '<div class="form-check"><input class="form-check-input" type="radio" name="status" id="status1" value="on"><label class="form-check-label" for="status1">สถานะการใช้งาน <b class="text-xs text-success">(เปิดการใช้งาน)</b></label></div><div class="form-check"><input class="form-check-input" type="radio" name="status" id="status2" checked value="off"><label class="form-check-label" for="status2">สถานะการใช้งาน <b class="text-xs text-danger">(ปิดการใช้งาน)</b></label></div>';
 
-                    if(status[i].status == 'on'){
+                    if (status[i].status == 'on') {
                         document.getElementById("statusCk").innerHTML = html_on;
-                    }else{
+                    } else {
                         document.getElementById("statusCk").innerHTML = html_off;
                     }
                 }

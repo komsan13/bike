@@ -5,12 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class StorageModel extends Model
+class accessoriesModel extends Model
 {
     use HasFactory;
-    protected $table = 'storages';
+    protected $table = 'accessories';
     protected $primaryKey = 'id';
-    protected $fillable = ['storage_id', 'id_type', 'invoice', 'model_number', 'tank_number', 'mile', 'price', 'down', 'finance', 'interest', 'discount', 'status', 'expire_date', 'book', 'img', 'transcript', 'date'];
+    protected $fillable = ['invoice', 'pipe', 'hand', 'glass', 'acc_keys', 'rear', 'shield', 'seat', 'other'];
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
     public $timestamp = false;

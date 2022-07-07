@@ -15,13 +15,14 @@ return new class extends Migration
     {
         Schema::create('accessories', function (Blueprint $table) {
             $table->id();
-            $table->boolean('pipe')->nullable()->default(false);
-            $table->boolean('hand')->nullable()->default(false);
-            $table->boolean('glass')->nullable()->default(false);
-            $table->boolean('key')->nullable()->default(false);
-            $table->boolean('rear')->nullable()->default(false);
-            $table->boolean('shield')->nullable()->default(false);
-            $table->boolean('seat')->nullable()->default(false);
+            $table->string('invoice')->nullable();
+            $table->string('pipe')->nullable();
+            $table->string('hand')->nullable();
+            $table->string('glass')->nullable();
+            $table->string('acc_keys')->nullable();
+            $table->string('rear')->nullable();
+            $table->string('shield')->nullable();
+            $table->string('seat')->nullable();
             $table->text('other')->nullable()->default('other_Accessories');
             $table->timestamps();
         });

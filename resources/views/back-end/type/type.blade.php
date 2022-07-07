@@ -6,9 +6,9 @@
             <div id="liveToast" class="toast hide " role="alert" aria-live="assertive" aria-atomic="true">
                 <div class="toast-header alert-success text-white"
                     style="border-top-left-radius: 10px; border-top-right-radius: 10px;">
-                    <strong class="me-auto"><i class="fa-solid fa-circle-check"></i> Successfully</strong>
+                    <strong class="me-auto"><i class="fas fa-check-circle fa-fade"></i> Successfully</strong>
                     {{-- <small>11 mins ago</small> --}}
-                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                    <button type="button" class="btn-sm btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
                 </div>
                 <div class="toast-body alert-success text-white"
                     style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
@@ -26,9 +26,9 @@
             <div id="liveToast" class="toast hide " role="alert" aria-live="assertive" aria-atomic="true">
                 <div class="toast-header alert-warning text-white"
                     style="border-top-left-radius: 10px; border-top-right-radius: 10px;">
-                    <strong class="me-auto"><i class="fas fa-exclamation-triangle"></i> Warning</strong>
+                    <strong class="me-auto"><i class="fas fa-exclamation-triangle fa-fade"></i> Warning</strong>
                     {{-- <small>11 mins ago</small> --}}
-                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                    <button type="button" class="btn-sm btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
                 </div>
                 <div class="toast-body alert-warning text-white"
                     style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
@@ -51,20 +51,26 @@
                             <div>
                                 <h5 class="mb-0"><i class="fas fa-align-left"></i> {{ $name_page }}</h5>
                             </div>
-                            @foreach ($status as $role_status)
-                                @if ($role_status->status == 'on')
-                                    @foreach ($menu_add as $row)
-                                        @if ($row->menu_add != '' && $row->menu_add == 'on')
-                                            <a href="#" class="btn bg-gradient-success mb-0" type="button"
-                                                data-bs-toggle="modal" data-bs-target="#insertdata"><i
-                                                    class="fa-solid fa-circle-plus"></i> เพิ่มข้อมูล</a>
-                                        @elseif ($row->menu_add != '' && $row->menu_add == 'off')
-                                            {{-- off --}}
-                                        @endif
-                                    @endforeach
-                                @endif
-                            @endforeach
+                            <div style="float: right">
+                                @foreach ($status as $role_status)
+                                    @if ($role_status->status == 'on')
+                                        @foreach ($menu_add as $menu_adds)
+                                            @if ($menu_adds->menu_add != '' && $menu_adds->menu_add == 'on')
+                                                <a href="#" class="btn-sm btn bg-gradient-warning mb-0"
+                                                    type="button"><i class="fa-solid fa-file-export"
+                                                        style="font-size: 11px;"></i>&nbsp; export</a>
 
+                                                <a href="#" class="btn-sm btn bg-gradient-success mb-0" type="button"
+                                                    data-bs-toggle="modal" data-bs-target="#insertdata"><i
+                                                        class="fa-solid fa-circle-plus fa-fade"
+                                                        style="font-size: 11px;"></i>&nbsp; เพิ่มข้อมูล</a>
+                                            @elseif ($menu_adds->menu_add != '' && $menu_adds->menu_add == 'off')
+                                                {{-- off --}}
+                                            @endif
+                                        @endforeach
+                                    @endif
+                                @endforeach
+                            </div>
                         </div>
                     </div>
                     <!-- Modal -->
@@ -74,7 +80,7 @@
                         <div class="modal-dialog modal-dialog-centered" role="document">
                             <div class="modal-content shadow" style="border-radius: 20px;">
                                 <div class="modal-header">
-                                    <b class="mt-3"><i class="fa-solid fa-circle-plus text-success"></i> เพิ่มข้อมูล
+                                    <b class="mt-3"><i class="fa-solid fa-circle-plus fa-fade"></i>&nbsp; เพิ่มข้อมูล
                                         {{ $name_page }}</b>
                                 </div>
                                 <form action="{{ url('type/type-add') }}" method="POST">
@@ -82,22 +88,22 @@
                                     <div class="modal-body">
                                         <div class="mb-3">
                                             <label for="" class="form-label">ยี่ห้อรถ</label>
-                                            <input type="text" class="form-control" id="type" name="type">
+                                            <input type="text" class="form-control form-control-sm" id="type" name="type">
                                         </div>
                                         <div class="mb-3">
                                             <label for="" class="form-label">รุ่นรถ</label>
-                                            <input type="text" class="form-control" id="model" name="model">
+                                            <input type="text" class="form-control form-control-sm" id="model" name="model">
                                         </div>
                                         <div class="mb-3">
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <label for="" class="form-label">ปีรถ</label>
-                                                    <input type="text" maxlength="4" class="form-control" id="year"
+                                                    <input type="text" maxlength="4" class="form-control form-control-sm" id="year"
                                                         name="year">
                                                 </div>
                                                 <div class="col-md-6">
                                                     <label for="" class="form-label">สีรถ</label>
-                                                    <input type="text" class="form-control" id="color"
+                                                    <input type="text" class="form-control form-control-sm" id="color"
                                                         name="color">
                                                 </div>
                                             </div>
@@ -106,18 +112,18 @@
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <label for="" class="form-label">cc รถ</label>
-                                                    <input type="text" class="form-control" id="cc"
+                                                    <input type="text" class="form-control form-control-sm" id="cc"
                                                         name="cc">
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn bg-gradient-secondary"
-                                            data-bs-dismiss="modal"><i class="fas fa-window-close"></i>
+                                        <button type="button" class="btn-sm btn bg-gradient-secondary"
+                                            data-bs-dismiss="modal"><i class="fas fa-window-close fa-fade"></i>
                                             &nbsp;&nbsp;ปิดแท็ป</button>
-                                        <button type="submit" class="btn bg-gradient-success"><i
-                                                class="fas fa-save"></i>
+                                        <button type="submit" class="btn-sm btn bg-gradient-success"><i
+                                                class="fas fa-save fa-fade"></i>
                                             &nbsp;&nbsp;บันทึกข้อมูล</button>
                                     </div>
                                 </form>
@@ -132,33 +138,33 @@
                         <div class="modal-dialog modal-dialog-centered" role="document">
                             <div class="modal-content shadow" style="border-radius: 20px;">
                                 <div class="modal-header">
-                                    <b class="mt-3"><i class="fas fa-edit text-warning"></i> แก้ไขข้อมูล
+                                    <b class="mt-3"><i class="fas fa-edit fa-fade text-warning"></i> แก้ไขข้อมูล
                                         {{ $name_page }}</b>
                                 </div>
                                 <form action="{{ url('type/type-update') }}" method="POST">
                                     @csrf
                                     <div class="modal-body">
                                         <div class="mb-3">
-                                            <input type="hidden" class="form-control" id="edit_id" name="id">
+                                            <input type="hidden" class="form-control form-control-sm" id="edit_id" name="id">
                                         </div>
                                         <div class="mb-3">
                                             <label for="" class="form-label">ยี่ห้อรถ</label>
-                                            <input type="text" class="form-control" id="edit_type" name="type">
+                                            <input type="text" class="form-control form-control-sm" id="edit_type" name="type">
                                         </div>
                                         <div class="mb-3">
                                             <label for="" class="form-label">รุ่นรถ</label>
-                                            <input type="text" class="form-control" id="edit_model" name="model">
+                                            <input type="text" class="form-control form-control-sm" id="edit_model" name="model">
                                         </div>
                                         <div class="mb-3">
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <label for="" class="form-label">ปีรถ</label>
-                                                    <input type="text" maxlength="4" class="form-control"
+                                                    <input type="text" maxlength="4" class="form-control form-control-sm"
                                                         id="edit_year" name="year">
                                                 </div>
                                                 <div class="col-md-6">
                                                     <label for="" class="form-label">สีรถ</label>
-                                                    <input type="text" class="form-control" id="edit_color"
+                                                    <input type="text" class="form-control form-control-sm" id="edit_color"
                                                         name="color">
                                                 </div>
                                             </div>
@@ -167,18 +173,18 @@
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <label for="" class="form-label">cc รถ</label>
-                                                    <input type="text" class="form-control" id="edit_cc"
+                                                    <input type="text" class="form-control form-control-sm" id="edit_cc"
                                                         name="cc">
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn bg-gradient-secondary"
-                                            data-bs-dismiss="modal"><i class="fas fa-window-close"></i>
+                                        <button type="button" class="btn-sm btn bg-gradient-secondary"
+                                            data-bs-dismiss="modal"><i class="fas fa-window-close fa-fade"></i>
                                             &nbsp;&nbsp;ปิดแท็ป</button>
-                                        <button type="submit" class="btn bg-gradient-success"><i
-                                                class="fas fa-save"></i>
+                                        <button type="submit" class="btn-sm btn bg-gradient-success"><i
+                                                class="fas fa-save fa-fade"></i>
                                             &nbsp;&nbsp;อัพเดท
                                             ข้อมูล</button>
                                     </div>
@@ -226,10 +232,14 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @php
+                                        $i = 1;
+                                    @endphp
                                     @foreach ($types as $row)
                                         <tr>
                                             <td>
-                                                <span class="text-secondary text-xs font-weight-normal">1</span>
+                                                <span
+                                                    class="text-secondary text-xs font-weight-normal">{{ $i++ }}</span>
                                             </td>
                                             <td class="text-center">
                                                 <span
@@ -260,11 +270,11 @@
                                                     @if ($role_status->status == 'on')
                                                         @foreach ($menu_edit as $menu_edits)
                                                             @if ($menu_edits->menu_edit != '' && $menu_edits->menu_edit == 'on')
-                                                                <a href="#" class="btn bg-gradient-warning"
+                                                                <a href="#" class="btn-sm btn bg-gradient-warning"
                                                                     style="padding: 15px;"
                                                                     onclick="get_data('{{ $row->id }}')"
                                                                     data-bs-toggle="modal" data-bs-target="#updatedata">
-                                                                    <i class="fa-lg fas fa-edit text-white"
+                                                                    <i class="fa-lg fas fa-edit fa-fade text-white"
                                                                         style="font-size: 10px;"></i>
                                                                 </a>
                                                             @elseif ($menu_edits->menu_edit != '' && $menu_edits->menu_edit == 'off')
@@ -280,10 +290,10 @@
                                                                 <a href="{{ url('type/type-delete/' . $row->id) }}"
                                                                     style="padding: 15px;"
                                                                     onclick="return confirm('ต้องการลบข้อมูลหรือไม่ !')"
-                                                                    class="btn bg-gradient-danger"
+                                                                    class="btn-sm btn bg-gradient-danger"
                                                                     data-bs-toggle="tooltip"
                                                                     data-bs-original-title="ลบข้อมูล">
-                                                                    <i class="fa-lg cursor-pointer fas fa-trash text-white"
+                                                                    <i class="fa-lg cursor-pointer fas fa-trash fa-fade text-white"
                                                                         style="font-size: 10px;"></i>
                                                                 </a>
                                                             @elseif ($menu_deletes->menu_delete != '' && $menu_deletes->menu_delete == 'off')

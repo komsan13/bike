@@ -88,6 +88,9 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::prefix('storage')->group(function () {
 		Route::get('/', [storageController::class, 'storage']);
 		Route::post('/storage-add', [storageController::class, 'storage_add']);
+		Route::get('/storage-delete/{id}', [storageController::class, 'storage_delete']);
+		Route::post('/storage-edit/{id}', [storageController::class, 'storage_edit']);
+		Route::post('/storage-update', [storageController::class, 'storage_update']);
 	});
 
 	Route::prefix('member')->group(function () {
